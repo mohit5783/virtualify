@@ -11,7 +11,7 @@ const NavBar = (props: any) => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const makeSEOFriendly = (str: string) => {
     let seostr = str
-      .replace(/[^a-zA-Z ]/g, "")
+      .replace(/[^a-zA-Z0-9. ]/g, "")
       .replace(/ /g, "-")
       .toLowerCase();
     seostr = seostr.replace(/-+/g, "-");
