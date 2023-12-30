@@ -1,7 +1,7 @@
 "use client";
 
 import { MdArrowBackIos } from "react-icons/md";
-import { SubMenuLinks } from "../content/SubMenuLinks";
+import { SubMenuLinks } from "@/content/SubMenuLinks";
 import { useState } from "react";
 import Link from "next/link";
 

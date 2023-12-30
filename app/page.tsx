@@ -3,6 +3,7 @@ import "./embla.css";
 import dynamic from "next/dynamic";
 import HomeAccelarators from "@/components/HomeAccelarators";
 import HomeWhy from "@/components/HomeWhy";
+import HomeLinks from "@/components/HomeLinks";
 
 const HomeHero = dynamic(() => import("@/components/HomeHero"));
 const HomeWho = dynamic(() => import("@/components/HomeWho"));
@@ -24,6 +25,7 @@ export default function Home() {
       <HomeWhat />
       <HomeAccelarators />
       <HomeWhy />
+      <HomeLinks />
     </main>
   );
 }
