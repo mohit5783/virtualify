@@ -54,7 +54,7 @@ const HomeCoreCapability = () => {
             </h2>
             <div className="flex justify-center">
               <Link
-                href="/technologies"
+                href="what-we-do/technologies"
                 className="mt-8 flex items-center justify-center p-0.5 rounded-lg group bg-gradient-to-br from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] hover:text-black text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 font-raleway text-xl"
               >
                 <span className="px-5 py-2.5 transition-all ease-in duration-200 bg-gray-900 rounded-md group-hover:bg-opacity-0">

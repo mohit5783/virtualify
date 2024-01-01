@@ -54,7 +54,6 @@ const HomeAccelarators = () => {
                 src={card.image}
                 alt={card.imageAlt}
                 priority
-                className="w-full h-full"
                 height={3100}
                 width={2160}
               />

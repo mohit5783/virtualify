@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import HomeAccelarators from "@/components/HomeAccelarators";
 import HomeWhy from "@/components/HomeWhy";
 import HomeLinks from "@/components/HomeLinks";
+import HomeTestimonials from "@/components/HomeTestimonials";
 
 const HomeHero = dynamic(() => import("@/components/HomeHero"));
 const HomeWho = dynamic(() => import("@/components/HomeWho"));
@@ -25,6 +26,7 @@ export default function Home() {
       <HomeWhat />
       <HomeAccelarators />
       <HomeWhy />
+      <HomeTestimonials />
       <HomeLinks />
     </main>
   );
