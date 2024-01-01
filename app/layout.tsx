@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Handlee, ZCOOL_KuaiLe, Raleway } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -122,6 +122,15 @@ const jsonLd = {
   },
   hasMap: "https://maps.app.goo.gl/anEqib4CjRaTyzWD7",
 };
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  minimumScale: 1.0,
+  maximumScale: 5.0,
+  themeColor: "#181818",
+};
+
 export default function RootLayout({
   children,
 }: {
