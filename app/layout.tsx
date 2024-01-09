@@ -76,9 +76,13 @@ export const metadata: Metadata = {
     "Implementation",
     "Virtualify Software Consultancy",
   ],
-  metadataBase: new URL("https://www.virtualifyme.com/"),
+  metadataBase: new URL("https://virtualifyme.com/"),
   verification: {
-    google: "pn2noD6LuKvWuKlgJBqPziiMKl893_2dk67kbzpb"
+    google: "pn2noD6LuKvWuKlgJBqPziiMKl893_2dk67kbzpb",
+    yandex: "f5fc9fa01d4ad706",
+    other: {
+      "msvalidate.01": "7EC886356A901AC3DE452725A28FF447",
+    },
   },
   openGraph: {
     url: "https://www.virtualifyme.com/",
