@@ -4,7 +4,7 @@ import Link from "next/link";
 const HomeLinks = () => {
   const makeSEOFriendly = (str: string) => {
     let seostr = str
-      .replace(/[^a-zA-Z0-9. ]/g, "")
+      .replace(/[^a-zA-Z0-9. -]/g, "")
       .replace(/ /g, "-")
       .toLowerCase();
     seostr = seostr.replace(/-+/g, "-");

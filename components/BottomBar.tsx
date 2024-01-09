@@ -88,7 +88,7 @@ const BottomBar = () => {
             href="https://www.youtube.com/@Virtualify"
           >
             <FaYoutube
-              className="text-4xl"
+              className="text-4xl text-red-600"
               title="Youtube account for Virtualify."
             />
           </Link>
