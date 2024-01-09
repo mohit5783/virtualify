@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https:/https://www.virtualifyme.com/sitemap.xml",
+    sitemap: "https://virtualifyme.com/sitemap.xml",
   };
 }

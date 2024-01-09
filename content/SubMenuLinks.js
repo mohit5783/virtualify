@@ -77,7 +77,7 @@ export const SubMenuLinks = [
       {
         name: "Innovation",
         List: [
-          "Crytpo travel platform",
+          "Crypto travel platform",
           "Blockchain parking platform",
           "IoT Smart Training",
         ],
