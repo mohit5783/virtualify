@@ -65,7 +65,7 @@ const HomeTestimonials = () => {
                   alt="quote"
                   height={200}
                   width={150}
-                  className="object-cover "
+                  className="object-cover w-auto h-auto"
                 />
                 <div className="absolute top-5 left-0 w-full h-full flex flex-col items-center p-3 pr-10">
                   <p className="text-4xl font-raleway font-thin">{card.name}</p>
@@ -79,7 +79,12 @@ const HomeTestimonials = () => {
               </div>
               <hr className="border-[0.5px] border-[var(--neon-green)] w-3/4" />
               <div className="flex pl-3 m-3">
-                <p className="text-sm font-mono">{card.TestimonialDate}</p>
+                <time
+                  dateTime={card.TestimonialDate}
+                  className="text-sm font-mono"
+                >
+                  {card.TestimonialDate}
+                </time>
               </div>
             </div>
           ))}

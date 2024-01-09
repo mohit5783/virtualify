@@ -27,7 +27,7 @@ const HomeLinks = () => {
                   className="flex items-center gap-2 hover:text-[var(--neon-green)] transition-colors duration-100"
                 >
                   <span className="relative group">
-                    <span className="flex text-2xl bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent font-raleway">
+                    <span className="flex text-xl bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent font-raleway">
                       {menu.name}
                     </span>
                     <span className="h-[1px] inline-block w-0 bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease-linear duration-100">
@@ -36,9 +36,9 @@ const HomeLinks = () => {
                   </span>
                 </Link>
 
-                <ul className="flex flex-wrap gap-5 mt-3">
+                <ul className="flex flex-wrap gap-2 mt-3">
                   {menu.List?.map((item, k) => (
-                    <li key={k} className="pr-8">
+                    <li key={k} className="pr-4">
                       <Link
                         href={`/${SubMenuLinks[j].menuName}/${makeSEOFriendly(
                           menu.name
@@ -46,7 +46,7 @@ const HomeLinks = () => {
                         className="flex items-center gap-2 text-white hover:text-[var(--neon-green)] transition-colors duration-100"
                       >
                         <span className="relative group">
-                          <span className="flex text-xl">{item}</span>
+                          <span className="flex text-lg">{item}</span>
                           <span className="h-[1px] inline-block w-0 bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease-linear duration-100">
                             &nbsp;
                           </span>
