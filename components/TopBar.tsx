@@ -6,9 +6,12 @@ import logo from "../public/logo.webp";
 import { NavLinks } from "../content/NavLinks";
 import NavBar from "./NavBar";
 import { useState } from "react";
+import { MdClose, MdMenu, MdMenuOpen } from "react-icons/md";
+import MobileNavBar from "./MobileNavBar";
 
 const TopBar = () => {
   const [isNavHovered, setIsNavHovered] = useState(false);
+  const [opneMenu, setOpenMenu] = useState(false);
   const [menuKey, setMenuKey] = useState("");
   return (
     <header>
@@ -21,13 +24,13 @@ const TopBar = () => {
               width={64}
               height={64}
             />
-            <div className="bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent items-center font-raleway">
+            <div className="hidden md:block bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent items-center font-raleway">
               <h1 className="text-4xl font-bold ms-2">Virtualify</h1>
               <h2 className="text-base">Software Consultancy</h2>
             </div>
           </div>
         </Link>
-        <div className="flex gap-4 pr-4">
+        <div className="hidden md:flex gap-4 pr-4">
           {NavLinks.map((link) => (
             <Link
               onMouseEnter={() => {
@@ -49,7 +52,18 @@ const TopBar = () => {
             </Link>
           ))}
         </div>
+        <div
+          className="flex justify-end items-center md:hidden cursor-pointer"
+          onClick={() => setOpenMenu(!opneMenu)}
+        >
+          {opneMenu ? (
+            <MdClose className="text-5xl" />
+          ) : (
+            <MdMenu className="text-5xl" />
+          )}
+        </div>
       </nav>
+      {opneMenu && <MobileNavBar />}
       {isNavHovered && (
         <NavBar
           TopMenu={menuKey}

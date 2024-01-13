@@ -34,10 +34,10 @@ const cardData = [
 ];
 const HomeAccelarators = () => {
   return (
-    <section className="home-core-capability mt-20">
+    <section className="home-core-capability mt-8">
       <div className="h-full">
         <div className="p-12 pb-1 flex justify-between items-center">
-          <h1 className="text-4xl font-raleway font-semibold bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent uppercase">
+          <h1 className="text-2xl md:text-4xl font-raleway font-semibold bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent uppercase">
             Accelarators
           </h1>
           <Link
@@ -47,7 +47,7 @@ const HomeAccelarators = () => {
             View ALL
           </Link>
         </div>
-        <div className="p-12 pt-1 flex justify-center items-center gap-12">
+        <div className="p-12 pt-1 lg:flex-row flex-col flex justify-center items-center gap-12">
           {cardData.map((card, i) => (
             <div key={i} id="card" className="relative group">
               <Image

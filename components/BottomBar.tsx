@@ -12,8 +12,8 @@ import {
 const BottomBar = () => {
   return (
     <footer className="mt-20 bg-black">
-      <div className="grid grid-flow-col-dense gap-4 p-5">
-        <div className="flex justify-start items-center">
+      <div className="grid grid-flow-row sm:grid-flow-col-dense gap-4 p-5">
+        <div className="hidden md:flex justify-start items-center">
           <Link href="/">
             <div className="flex">
               <Image
@@ -99,7 +99,7 @@ const BottomBar = () => {
           <br />
           All rights reserved.
         </div>
-        <div className="flex justify-end items-center text-right">
+        <div className="flex justify-center md:justify-end items-center md:text-right text-center">
           Privacy Notice, Cookie Policy, Disclaimer, Security Policy
         </div>
       </div>

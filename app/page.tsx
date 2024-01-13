@@ -1,14 +1,13 @@
 import { EmblaOptionsType } from "embla-carousel-react";
 import "./embla.css";
 import dynamic from "next/dynamic";
-import HomeAccelarators from "@/components/HomeAccelarators";
-import HomeWhy from "@/components/HomeWhy";
-import HomeLinks from "@/components/HomeLinks";
-import HomeTestimonials from "@/components/HomeTestimonials";
-
 const HomeHero = dynamic(() => import("@/components/HomeHero"));
 const HomeWho = dynamic(() => import("@/components/HomeWho"));
 const HomeWhat = dynamic(() => import("@/components/HomeWhat"));
+const HomeAccelarators = dynamic(() => import("@/components/HomeAccelarators"));
+const HomeWhy = dynamic(() => import("@/components/HomeWhy"));
+const HomeTestimonials = dynamic(() => import("@/components/HomeTestimonials"));
+const HomeLinks = dynamic(() => import("@/components/HomeLinks"));
 const HomeCoreCapability = dynamic(
   () => import("@/components/HomeCoreCapability")
 );

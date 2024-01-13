@@ -58,7 +58,7 @@ const HomeTestimonials = () => {
         </div>
         <div className="mt-10 flex flex-wrap">
           {TestimonialData.map((card, i) => (
-            <div key={i} className="w-1/3 p-2 relative">
+            <div key={i} className="lg:w-1/3 md:w-1/2 w-full p-2 relative">
               <div className="relative">
                 <Image
                   src={quote}

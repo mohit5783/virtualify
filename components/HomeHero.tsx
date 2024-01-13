@@ -16,7 +16,9 @@ const { imageByIndex, imgTextByIndex } = imagesByIndex;
 
 const HomeHero = (props: PropType) => {
   const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ delay: 5000 }),
+  ]);
   const [showText, setShowText] = useState(false);
   return (
     <div className="embla">
@@ -29,12 +31,12 @@ const HomeHero = (props: PropType) => {
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
             >
-              <div className="absolute top-16 left-40 text-center">
+              <div className="absolute top-1/3 md:top-16 left-1/3 md:left-40 text-center">
                 <div className="p-5 bg-black bg-opacity-85 rounded-xl">
-                  <h1 className="text-4xl bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent font-raleway">
+                  <h1 className="text-2xl md:text-4xl bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent font-raleway">
                     {imgTextByIndex(index).title}
                   </h1>
-                  <h2 className="text-lg font-handlee">
+                  <h2 className="text-base md:text-lg font-handlee">
                     {imgTextByIndex(index).titleSubText}
                   </h2>
                 </div>

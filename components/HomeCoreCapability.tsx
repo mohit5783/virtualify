@@ -41,9 +41,9 @@ const technologies = [
 
 const HomeCoreCapability = () => {
   return (
-    <section className="home-core-capability mt-20">
-      <div className="h-screen bg-[var(--neon-yellow-green)] flex justify-center items-center">
-        <div className="flex justify-between items-center">
+    <section className="home-core-capability mt-8">
+      <div className="h-full pt-20 pb-20 bg-[var(--neon-yellow-green)] flex justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-center">
           <div className="ms-5 p-3 w-2/3">
             <h1 className="text-6xl font-raleway text-black font-semibold justify-center flex">
               Digital Core Capabilities
@@ -52,7 +52,7 @@ const HomeCoreCapability = () => {
               Foster essential competencies to achieve impactful digital
               results.
             </h2>
-            <div className="flex justify-center">
+            <div className="flex justify-center p-10">
               <Link
                 href="what-we-do/technologies"
                 className="mt-8 flex items-center justify-center p-0.5 rounded-lg group bg-gradient-to-br from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] hover:text-black text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 font-raleway text-xl"
@@ -63,10 +63,10 @@ const HomeCoreCapability = () => {
               </Link>
             </div>
             <div className="mt-8">
-              <ul className="grid grid-cols-4 text-black gap-4">
+              <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 text-black gap-4">
                 {technologies.map((tech, index) => (
                   <li key={index} className="flex items-center gap-4">
-                    <span className="text-5xl">{tech.icon}</span>
+                    <span className="text-3xl md:text-5xl">{tech.icon}</span>
                     <p className="text-xl">{tech.name}</p>
                   </li>
                 ))}

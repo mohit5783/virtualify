@@ -4,6 +4,14 @@
   --slide-height: auto;
   padding: 1rem;
 }
+@media only screen and (max-width: 768px) {
+  .embla {
+    --slide-spacing: 2rem;
+    --slide-size: 100%;
+    --slide-height: auto;
+    padding: 1px;
+  }
+}
 .embla__viewport {
   overflow: hidden;
 }

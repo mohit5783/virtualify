@@ -70,33 +70,37 @@ const whyAnswers = [
 
 const HomeWhy = () => {
   return (
-    <section className="mt-20">
+    <section className="mt-8">
       <div className="flex p-12 justify-center">
         <h1 className="text-4xl font-raleway font-semibold bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent uppercase">
           Why Choose Virtualify?
         </h1>
       </div>
-      <div className="p-12 flex flex-col justify-center items-center gap-12">
+      <div className="px-10 flex flex-col justify-center items-center gap-12">
         {whyAnswers.map((answer, i) =>
           i % 2 === 0 ? (
-            <div key={i} className="flex justify-center items-center">
-              <div className="flex justify-center items-center h-full w-full bg-gradient-to-br from-[var(--neon-yellow)] from-10% via-transparent rounded-full">
+            <div
+              key={i}
+              className="flex flex-col md:flex-row items-center justify-between"
+            >
+              <div className="h-full w-3/4 md:w-1/3 bg-gradient-to-br from-[var(--neon-yellow)] from-10% via-transparent rounded-full">
                 {answer.icon}
               </div>
-              <div>
+              <div className="w-2/3">
                 <div className="flex justify-center">
                   <h1 className="uppercase text-4xl font-raleway font-semibold text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
                     {answer.title}
                   </h1>
                 </div>
-                <p className="text-center mt-10 text-xl">
-                  {answer.description}
-                </p>
+                <p className="text-center mt-5 text-xl">{answer.description}</p>
               </div>
             </div>
           ) : (
-            <div key={i} className="flex justify-center items-center">
-              <div>
+            <div
+              key={i}
+              className="flex flex-col md:flex-row justify-center items-center"
+            >
+              <div className="w-2/3">
                 <div className="flex justify-center">
                   <h1 className="uppercase text-4xl font-raleway font-semibold text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
                     {answer.title}
@@ -106,7 +110,7 @@ const HomeWhy = () => {
                   {answer.description}
                 </p>
               </div>
-              <div className="flex justify-center items-center h-full w-full bg-gradient-to-br from-transparent via-transparent to-[var(--neon-green)] rounded-full">
+              <div className="h-full w-3/4 md:w-1/3 bg-gradient-to-br from-transparent via-transparent to-[var(--neon-green)] rounded-full">
                 {answer.icon}
               </div>
             </div>
