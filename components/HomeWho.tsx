@@ -4,17 +4,15 @@ import Link from "next/link";
 
 const HomeWho = () => {
   return (
-    <section className="h-[100vh] lg:h-full relative bg-[#181818] mt-8">
+    <section className="h-screen lg:h-full relative bg-[#181818] mt-8">
       <div className="w-full lg:w-2/3">
         <Image
           src={whoweare}
           alt="Who We Are"
-          width={2000}
-          height={1400}
-          priority
           placeholder="blur"
+          sizes="100vw"
           style={{
-            maxWidth: "100%",
+            width: "100%",
             height: "auto",
           }}
         />
