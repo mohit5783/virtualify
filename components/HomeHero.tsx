@@ -36,7 +36,7 @@ const HomeHero = (props: PropType) => {
                   <h1 className="text-2xl md:text-4xl bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent font-raleway">
                     {imgTextByIndex(index).title}
                   </h1>
-                  <h2 className="text-base md:text-lg font-handlee">
+                  <h2 className="text-base md:text-lg font-ubuntu">
                     {imgTextByIndex(index).titleSubText}
                   </h2>
                 </div>

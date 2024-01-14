@@ -9,6 +9,33 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
+const footerLinks = [
+  {
+    label: "Privacy Notice",
+    href: "/privacy-notice",
+  },
+  {
+    label: "Cookie Policy",
+    href: "/cookie-policy",
+  },
+  {
+    label: "Disclaimer",
+    href: "/disclaimer",
+  },
+  {
+    label: "Security Policy",
+    href: "/security-policy",
+  },
+  {
+    label: "Terms of Use",
+    href: "/terms-of-use",
+  },
+  {
+    label: "Sitemap",
+    href: "/sitemap",
+  },
+];
+
 const BottomBar = () => {
   return (
     <footer className="mt-20 bg-black">
@@ -22,7 +49,7 @@ const BottomBar = () => {
                 width={64}
                 height={64}
               />
-              <div className="bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent items-center font-raleway">
+              <div className="hidden lg:block bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent items-center font-raleway">
                 <h1 className="text-4xl font-bold ms-2">Virtualify</h1>
                 <h2 className="text-base">Software Consultancy</h2>
               </div>
@@ -93,15 +120,23 @@ const BottomBar = () => {
             />
           </Link>
         </div>
-        <div className="flex justify-center items-center text-center text-xs">
-          &copy; {new Date().getFullYear()}
-          &nbsp;VIRTUALIFY SOFTWARE CONSULTANCY PRIVATE LIMITED.
-          <br />
-          All rights reserved.
+        <div className="flex flex-wrap justify-center md:justify-end items-center text-center gap-3">
+          {footerLinks.map((link, index) => (
+            <Link
+              href={link.href}
+              key={index}
+              className="text-base font-montserrat font-semibold text-gray-400 hover:text-gray-200"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
-        <div className="flex justify-center md:justify-end items-center md:text-right text-center">
-          Privacy Notice, Cookie Policy, Disclaimer, Security Policy
-        </div>
+      </div>
+      <div className="flex justify-center items-center text-center text-sm font-ubuntu font-light">
+        &copy; {new Date().getFullYear()}
+        &nbsp;VIRTUALIFY SOFTWARE CONSULTANCY PRIVATE LIMITED.
+        <br />
+        All rights reserved.
       </div>
     </footer>
   );

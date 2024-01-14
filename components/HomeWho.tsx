@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HomeWho = () => {
   return (
-    <section className="h-[70vh] lg:h-full relative bg-[#181818] mt-8">
+    <section className="h-[100vh] lg:h-full relative bg-[#181818] mt-8">
       <div className="w-full lg:w-2/3">
         <Image
           src={whoweare}
@@ -22,17 +22,15 @@ const HomeWho = () => {
                 Who We Are
               </h1>
             </div>
-            <h2 className="text-2xl font-handlee mr-10 mt-5 text-[var(--neon-yellow)]">
-              We foster greater futures through a commitment to innovation and
-              the synergy of collective knowledge.
+            <h2 className="text-2xl font-merriweather font-[300] mr-10 mt-5 text-[var(--neon-yellow)]">
+              Fueling brighter tomorrows through innovative synergy and
+              collective wisdom.
             </h2>
-            <p className="mt-5 mr-5 text-base">
-              Virtualify Software Consultancy (VSC) is a distinguished
-              organization specializing in IT services, development, consulting,
-              and business solutions. With a proven track record spanning over
-              one year, we have been privileged to partner with numerous
-              businesses, guiding them through transformative journeys with
-              unwavering commitment and expertise.
+            <p className="font-montserrat font-medium mt-5 mr-5 text-lg">
+              Virtualify Software Consultancy (VSC) is specializing in IT
+              services, development, consulting, and business solutions. We
+              partner with numerous businesses, guiding them to transform with
+              commitment and expertise.
             </p>
             <div className="flex justify-start">
               <Link
@@ -55,11 +53,11 @@ const HomeWho = () => {
                 Who We Are
               </h1>
             </div>
-            <h2 className="text-2xl font-handlee mr-10 mt-5 text-[var(--neon-yellow)]">
+            <h2 className="text-2xl font-merriweather font-[300] mr-10 mt-5 text-[var(--neon-yellow)]">
               We foster greater futures through a commitment to innovation and
               the synergy of collective knowledge.
             </h2>
-            <p className="mt-5 mr-5 text-base">
+            <p className="font-montserrat mt-5 mr-5 text-lg">
               Virtualify Software Consultancy (VSC) is a distinguished
               organization specializing in IT services, development, consulting,
               and business solutions. With a proven track record spanning over

@@ -41,27 +41,28 @@ const technologies = [
 
 const HomeCoreCapability = () => {
   return (
-    <section className="home-core-capability mt-8">
-      <div className="h-full pt-20 pb-20 bg-[var(--neon-yellow-green)] flex justify-center items-center">
+    <section className="home-core-capability mt-8 bg-[var(--neon-yellow-green)]">
+      <div className="pt-20">
+        <h1 className="text-6xl font-ubuntu text-black font-semibold justify-center flex">
+          Digital Core Capabilities
+        </h1>
+        <h2 className="font-ubuntu text-slate-600 text-2xl justify-center flex">
+          Foster essential competencies to achieve impactful digital results.
+        </h2>
+        <div className="flex justify-center py-3">
+          <Link
+            href="what-we-do/technologies"
+            className="mt-8 flex items-center justify-center p-0.5 rounded-lg group bg-gradient-to-br from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] hover:text-black text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 font-raleway text-xl"
+          >
+            <span className="px-8 py-3 transition-all ease-in duration-200 bg-gray-900 rounded-md group-hover:bg-opacity-0">
+              Explore VSC Core Capabilities
+            </span>
+          </Link>
+        </div>
+      </div>
+      <div className="h-full flex justify-center items-center pb-12">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <div className="ms-5 p-3 w-2/3">
-            <h1 className="text-6xl font-raleway text-black font-semibold justify-center flex">
-              Digital Core Capabilities
-            </h1>
-            <h2 className="font-handlee text-slate-600 text-2xl mt-3  justify-center flex">
-              Foster essential competencies to achieve impactful digital
-              results.
-            </h2>
-            <div className="flex justify-center p-10">
-              <Link
-                href="what-we-do/technologies"
-                className="mt-8 flex items-center justify-center p-0.5 rounded-lg group bg-gradient-to-br from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] hover:text-black text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 font-raleway text-xl"
-              >
-                <span className="px-5 py-2.5 transition-all ease-in duration-200 bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Explore VSC Core Capabilities
-                </span>
-              </Link>
-            </div>
             <div className="mt-8">
               <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 text-black gap-4">
                 {technologies.map((tech, index) => (
@@ -73,7 +74,7 @@ const HomeCoreCapability = () => {
               </ul>
             </div>
           </div>
-          <div className="w-auto">
+          <div className="w-full lg:w-1/3 ">
             <Image
               src={corecapability}
               alt="Core Capabilities"

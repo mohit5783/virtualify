@@ -15,11 +15,11 @@ const HomeWhat = () => {
                     What we do
                   </h1>
                 </div>
-                <h2 className="text-2xl font-handlee mr-5 mt-5 text-[var(--neon-yellow)]">
+                <h2 className="text-2xl font-merriweather font-[300] mr-5 mt-5 text-[var(--neon-yellow)]">
                   VSC Empowers businesses through strategic technological
                   transformations.
                 </h2>
-                <p className="mt-5 mr-5">
+                <p className="font-montserrat font-medium mt-5 mr-5">
                   We assist businesses in navigating digital transformation with
                   success, propelling genuine growth. Leveraging a potent blend
                   of extensive experience and contextual knowledge within a
@@ -47,11 +47,11 @@ const HomeWhat = () => {
                     What we do
                   </h1>
                 </div>
-                <h2 className="text-2xl font-handlee mr-5 mt-5 text-[var(--neon-yellow)]">
+                <h2 className="text-2xl font-merriweather font-[300] mr-5 mt-5 text-[var(--neon-yellow)]">
                   VSC Empowers businesses through strategic technological
                   transformations.
                 </h2>
-                <p className="mt-5 mr-5">
+                <p className="font-montserrat font-medium mt-5 mr-5">
                   We assist businesses in navigating digital transformation with
                   success, propelling genuine growth. Leveraging a potent blend
                   of extensive experience and contextual knowledge within a

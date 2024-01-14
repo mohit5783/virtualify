@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)", "sans-serif"],
+        raleway: ["var(--font-raleway)"],
+        montserrat: ["var(--font-montserrat)"],
+        ubuntu: ["var(--font-ubuntu)"],
+        merriweather: ["var(--font-merriweather)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

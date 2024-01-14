@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Handlee, ZCOOL_KuaiLe, Raleway } from "next/font/google";
+import {
+  Inter,
+  Raleway,
+  Montserrat,
+  Ubuntu,
+  Merriweather,
+} from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 import Script from "next/script";
 import TopBar from "@/components/TopBar";
@@ -7,22 +14,29 @@ import BottomBar from "@/components/BottomBar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const handlee = Handlee({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-handlee",
-  display: "swap",
-});
+
 const raleway = Raleway({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-raleway",
   display: "swap",
 });
-const zcool = ZCOOL_KuaiLe({
+const ubuntu = Ubuntu({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-zcool",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-ubuntu",
+  display: "swap",
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  variable: "--font-merriweather",
   display: "swap",
 });
 export const metadata: Metadata = {
@@ -147,7 +161,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${handlee.variable} ${zcool.variable} ${raleway.variable}`}
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable,
+          raleway.variable,
+          montserrat.variable,
+          ubuntu.variable,
+          merriweather.variable
+        )}
       >
         <TopBar />
         {children}
