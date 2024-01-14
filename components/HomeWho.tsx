@@ -11,7 +11,12 @@ const HomeWho = () => {
           alt="Who We Are"
           width={2000}
           height={1400}
-          loading="lazy"
+          priority
+          placeholder="blur"
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
         />
       </div>
       <div className="lg:block hidden bg-[#181818] absolute top-14 xl:top-20 left-1/2 bottom-14 xl:bottom-20">
