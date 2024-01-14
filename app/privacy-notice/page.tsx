@@ -146,7 +146,7 @@ const page = () => {
           </h2>
         </div>
         <p className="mb-8">
-          If you've provided consent for specific processing, you can withdraw
+          If you&apos;ve provided consent for specific processing, you can withdraw
           it at any time. Contact our Data Protection Officers for assistance.
         </p>
         <div className="flex">
