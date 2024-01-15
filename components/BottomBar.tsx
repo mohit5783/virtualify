@@ -48,6 +48,7 @@ const BottomBar = () => {
                 alt="Virtualify Software Consultancy - logo"
                 width={64}
                 height={64}
+                loading="lazy"
               />
               <div className="hidden lg:block bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent items-center font-raleway">
                 <h1 className="text-4xl font-bold ms-2">Virtualify</h1>

@@ -81,6 +81,7 @@ const HomeCoreCapability = () => {
               width={1028}
               height={713}
               loading="lazy"
+              quality={10}
             />
           </div>
         </div>

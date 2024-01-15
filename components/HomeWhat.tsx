@@ -79,6 +79,7 @@ const HomeWhat = () => {
             width={2000}
             height={942}
             loading="lazy"
+            quality={10}
           />
         </div>
       </div>

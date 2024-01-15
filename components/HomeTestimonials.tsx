@@ -66,6 +66,8 @@ const HomeTestimonials = () => {
                   height={200}
                   width={150}
                   className="object-cover w-auto h-auto"
+                  quality={10}
+                  loading="lazy"
                 />
                 <div className="absolute top-5 left-0 w-full h-full flex flex-col items-center p-3 pr-10">
                   <p className="text-4xl font-raleway font-thin">{card.name}</p>

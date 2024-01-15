@@ -53,9 +53,10 @@ const HomeAccelarators = () => {
               <Image
                 src={card.image}
                 alt={card.imageAlt}
-                priority
+                quality={10}
                 height={3100}
                 width={2160}
+                loading="lazy"
               />
               <div
                 id="blackOverlay"

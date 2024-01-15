@@ -9,12 +9,15 @@ const HomeWho = () => {
         <Image
           src={whoweare}
           alt="Who We Are"
-          placeholder="blur"
-          sizes="100vw"
+          width={2000}
+          height={1400}
           style={{
-            width: "100%",
+            objectFit: "cover",
             height: "auto",
+            width: "100%",
+            display: "block",
           }}
+          quality={10}
         />
       </div>
       <div className="lg:block hidden bg-[#181818] absolute top-14 xl:top-20 left-1/2 bottom-14 xl:bottom-20">

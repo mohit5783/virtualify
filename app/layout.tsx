@@ -11,7 +11,6 @@ import "./globals.css";
 import Script from "next/script";
 import TopBar from "@/components/TopBar";
 import BottomBar from "@/components/BottomBar";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -173,7 +172,6 @@ export default function RootLayout({
         <TopBar />
         {children}
         <BottomBar />
-        <SpeedInsights />
       </body>
       <Script
         strategy="lazyOnload"
