@@ -66,16 +66,16 @@ const HomeTestimonials = () => {
                   height={200}
                   width={150}
                   className="object-cover w-auto h-auto"
-                  quality={10}
+                  quality={80}
                   loading="lazy"
                 />
                 <div className="absolute top-5 left-0 w-full h-full flex flex-col items-center p-3 pr-10">
-                  <p className="text-4xl font-raleway font-thin">{card.name}</p>
-                  <p className="text-2xl font-inter">{card.designation}</p>
+                  <p className="text-4xl font-montserrat font-[300]">{card.name}</p>
+                  <p className="text-2xl font-ubuntu font-[300]">{card.designation}</p>
                 </div>
               </div>
               <div className="m-1 p-3 relative">
-                <p className="mt-3 text-xl font-extralight">
+                <p className="mt-3 text-xl font-inter font-[200]">
                   {card.description}
                 </p>
               </div>
@@ -83,7 +83,7 @@ const HomeTestimonials = () => {
               <div className="flex pl-3 m-3">
                 <time
                   dateTime={card.TestimonialDate}
-                  className="text-sm font-mono"
+                  className="text-sm font-montserrat font-[100]"
                 >
                   {card.TestimonialDate}
                 </time>

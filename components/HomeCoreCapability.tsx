@@ -42,11 +42,11 @@ const technologies = [
 const HomeCoreCapability = () => {
   return (
     <section className="home-core-capability mt-8 bg-[var(--neon-yellow-green)]">
-      <div className="pt-20">
-        <h1 className="text-6xl font-ubuntu text-black font-semibold justify-center flex">
+      <div className="pt-20 flex flex-col text-justify items-center px-5">
+        <h1 className="text-center text-3xl lg:text-5xl xl:text-6xl font-ubuntu text-black font-semibold">
           Digital Core Capabilities
         </h1>
-        <h2 className="font-ubuntu text-slate-600 text-2xl justify-center flex">
+        <h2 className="text-center font-ubuntu text-slate-600 text-xl md:text-2xl">
           Foster essential competencies to achieve impactful digital results.
         </h2>
         <div className="flex justify-center py-3">
@@ -81,7 +81,7 @@ const HomeCoreCapability = () => {
               width={1028}
               height={713}
               loading="lazy"
-              quality={10}
+              quality={90}
             />
           </div>
         </div>

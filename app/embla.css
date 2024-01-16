@@ -8,7 +8,7 @@
   .embla {
     --slide-spacing: 2rem;
     --slide-size: 100%;
-    --slide-height: auto;
+    --slide-height: 70vh;
     padding: 1px;
   }
 }

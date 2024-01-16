@@ -70,13 +70,14 @@ const HomeHero = (props: PropType) => {
                 </div>
               </div>
               <Image
-                className="embla__slide__img"
+                className="embla__slide__img h-screen"
                 src={imageByIndex(index)}
-                height={750}
+                height={1000}
                 width={1500}
                 alt={imgTextByIndex(index).altText}
                 priority
-                quality={10}
+                quality={90}
+                sizes="(max-width: 768px) 90vw, 100vw"
               />
             </div>
           ))}

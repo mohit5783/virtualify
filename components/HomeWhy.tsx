@@ -72,11 +72,11 @@ const HomeWhy = () => {
   return (
     <section className="mt-8">
       <div className="flex p-12 justify-center">
-        <h1 className="text-4xl font-raleway font-semibold bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent uppercase">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl text-center font-raleway font-semibold bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent uppercase">
           Why Choose Virtualify?
         </h1>
       </div>
-      <div className="px-10 flex flex-col justify-center items-center gap-12">
+      <div className="px-3 md:px-10 flex flex-col justify-center items-center gap-12">
         {whyAnswers.map((answer, i) =>
           i % 2 === 0 ? (
             <div
@@ -87,12 +87,14 @@ const HomeWhy = () => {
                 {answer.icon}
               </div>
               <div className="w-2/3">
-                <div className="flex justify-center">
-                  <h1 className="uppercase text-4xl font-raleway font-semibold text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
+                <div className="flex justify-center items-center">
+                  <h1 className="uppercase text-2xl sm:text-4xl font-montserrat font-[700] sm:font-[900] text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
                     {answer.title}
                   </h1>
                 </div>
-                <p className="text-center mt-5 text-xl">{answer.description}</p>
+                <p className="text-center font-merriweather font-[300] mt-5 text-xl">
+                  {answer.description}
+                </p>
               </div>
             </div>
           ) : (
@@ -102,11 +104,11 @@ const HomeWhy = () => {
             >
               <div className="w-2/3">
                 <div className="flex justify-center">
-                  <h1 className="uppercase text-4xl font-raleway font-semibold text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
+                  <h1 className="uppercase text-2xl sm:text-4xl font-montserrat font-[700] sm:font-[900] text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
                     {answer.title}
                   </h1>
                 </div>
-                <p className="text-center mt-10 text-xl">
+                <p className="text-center font-merriweather font-[300] mt-5 text-xl">
                   {answer.description}
                 </p>
               </div>

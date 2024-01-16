@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HomeWhat = () => {
   return (
-    <section className="h-[70vh] lg:h-full relative bg-[#181818] mt-8">
+    <section className="h-screen lg:h-full relative bg-[#181818] mt-8 mb-52 md:mb-10 lg:mb-0">
       <div className="flex justify-between">
         <div>
           <div className="lg:block hidden bg-[#181818] absolute top-14 xl:top-20 right-1/2 bottom-14 xl:bottom-20">
@@ -39,7 +39,7 @@ const HomeWhat = () => {
               </div>
             </div>
           </div>
-          <div className="lg:hidden block bg-[#181818] absolute top-1/3 md:top-1/2 sm:left-20 left-2 right-2 sm:right-20 pt-7">
+          <div className="lg:hidden block bg-[#181818] absolute top-2/3 md:top-1/2 sm:left-20 left-2 right-2 sm:right-20 py-8">
             <div className="h-full flex items-center">
               <div className="ms-5">
                 <div className="flex">
@@ -79,7 +79,9 @@ const HomeWhat = () => {
             width={2000}
             height={942}
             loading="lazy"
-            quality={10}
+            quality={90}
+            className="w-full object-cover h-[80vh] md:h-auto"
+            sizes="(max-width: 768px) 100vw, 75vw"
           />
         </div>
       </div>

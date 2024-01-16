@@ -42,7 +42,7 @@ const HomeAccelarators = () => {
           </h1>
           <Link
             href="/who-we-are/accelarations"
-            className="font-inter text-[var(--neon-orange)] uppercase text-sm hover:text-[var(--neon-green)] transition-all ease-in duration-200"
+            className="font-ubuntu text-[var(--neon-orange)] uppercase text-sm hover:text-[var(--neon-green)] transition-all ease-in duration-200"
           >
             View ALL
           </Link>
@@ -53,7 +53,7 @@ const HomeAccelarators = () => {
               <Image
                 src={card.image}
                 alt={card.imageAlt}
-                quality={10}
+                quality={90}
                 height={3100}
                 width={2160}
                 loading="lazy"
@@ -64,15 +64,15 @@ const HomeAccelarators = () => {
               >
                 &nbsp;
               </div>
-              <h1 className="absolute top-5 left-5 bg-[#181818] text-[var(--neon-green)] px-4 py-1 rounded-full text-sm">
+              <h1 className="absolute top-5 left-5 bg-[#181818] text-[var(--neon-green)] px-4 py-1 rounded-full text-sm font-ubuntu">
                 {card.title}
               </h1>
-              <p className="absolute bottom-16 left-5 px-4 py-1 text-xl font-raleway font-bold drop-shadow">
+              <p className="absolute bottom-16 left-5 sm:px-4 px-2 py-1 text-xl font-inter font-bold drop-shadow">
                 {card.description}
               </p>
               <Link
                 href={`/who-we-are/accelarations/${card.link}`}
-                className="absolute bottom-4 left-5 px-4 py-1 font-raleway text-[var(--neon-orange)] hover:text-[var(--neon-green)] transition-all ease-in duration-200"
+                className="absolute bottom-4 left-5 px-4 py-1 font-montserrat text-[var(--neon-orange)] hover:text-[var(--neon-green)] transition-all ease-in duration-200"
               >
                 {card.linkText} &rarr;
               </Link>

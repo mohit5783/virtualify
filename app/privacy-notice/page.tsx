@@ -11,7 +11,7 @@ const page = () => {
           alt="Privacy Policy | VSC"
           width={1920}
           height={900}
-          quality={10}
+          quality={90}
           loading="lazy"
         />
         <div className="absolute top-1/3 left-10 md:left-1/4 right-10 md:right-1/4 bg-black p-3 md:p-10 opacity-85">
