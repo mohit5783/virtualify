@@ -11,6 +11,7 @@ import "./globals.css";
 import Script from "next/script";
 import TopBar from "@/components/TopBar";
 import BottomBar from "@/components/BottomBar";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -170,6 +171,14 @@ export default function RootLayout({
         )}
       >
         <TopBar />
+        <Breadcrumb
+          homeElement={"Home"}
+          separator={<span className="font-bold">&rarr;</span>}
+          activeClasses="bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent"
+          containerClasses="flex p-5 font-montserrat"
+          listClasses="mx-2 font-bold"
+          capitalizeLinks
+        />
         {children}
         <BottomBar />
       </body>
