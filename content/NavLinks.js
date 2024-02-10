@@ -1,4 +1,4 @@
-import { MdUpcoming } from "react-icons/md";
+import { MdContactEmergency, MdUpcoming } from "react-icons/md";
 import { GrWorkshop } from "react-icons/gr";
 import { HiOutlineIdentification } from "react-icons/hi";
 
@@ -21,4 +21,10 @@ export const NavLinks = [
     key: "upcoming-projects",
     icon: <MdUpcoming className="text-2xl" />,
   },
+  // {
+  //   label: "Contact",
+  //   href: "/contact",
+  //   key: "contact",
+  //   icon: <MdContactEmergency className="text-2xl" />,
+  // },
 ];

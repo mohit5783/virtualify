@@ -19,25 +19,21 @@ const raleway = Raleway({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-raleway",
-  display: "swap",
 });
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-ubuntu",
-  display: "swap",
 });
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
-  display: "swap",
 });
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["300", "400", "700", "900"],
   variable: "--font-merriweather",
-  display: "swap",
 });
 export const metadata: Metadata = {
   title: "Virtualify Software Consultancy (VSC) – Mastering Digital Solutions",
@@ -162,7 +158,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-inter antialiased",
           inter.variable,
           raleway.variable,
           montserrat.variable,

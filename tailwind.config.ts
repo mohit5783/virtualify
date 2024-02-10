@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)", "sans-serif"],
+        inter: ["var(--font-inter)"],
         raleway: ["var(--font-raleway)"],
         montserrat: ["var(--font-montserrat)"],
         ubuntu: ["var(--font-ubuntu)"],

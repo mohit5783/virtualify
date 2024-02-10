@@ -6,6 +6,9 @@ const FuelBetter2moro = dynamic(
 );
 const VSCGlance = dynamic(() => import("@/components/whoweare/VSCGlance"));
 const OurPeople = dynamic(() => import("@/components/whoweare/OurPeople"));
+const FooterFlyout = dynamic(
+  () => import("@/components/whoweare/FooterFlyout")
+);
 
 const page = () => {
   return (
@@ -14,6 +17,7 @@ const page = () => {
       <FuelBetter2moro />
       <VSCGlance />
       <OurPeople />
+      <FooterFlyout />
     </main>
   );
 };

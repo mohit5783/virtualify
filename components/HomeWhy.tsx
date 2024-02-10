@@ -77,47 +77,34 @@ const HomeWhy = () => {
         </h1>
       </div>
       <div className="px-3 md:px-10 flex flex-col justify-center items-center gap-12">
-        {whyAnswers.map((answer, i) =>
-          i % 2 === 0 ? (
+        {whyAnswers.map((answer, i) => (
+          <div
+            key={i}
+            className={`flex flex-col md:flex-row items-center justify-between ${
+              i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            }`}
+          >
             <div
-              key={i}
-              className="flex flex-col md:flex-row items-center justify-between"
+              className={`h-full w-3/4 md:w-1/3 rounded-full ${
+                i % 2 === 0
+                  ? "bg-gradient-to-br from-[var(--neon-yellow)] from-10% via-transparent"
+                  : "bg-gradient-to-br from-transparent via-transparent to-[var(--neon-green)]"
+              }`}
             >
-              <div className="h-full w-3/4 md:w-1/3 bg-gradient-to-br from-[var(--neon-yellow)] from-10% via-transparent rounded-full">
-                {answer.icon}
-              </div>
-              <div className="w-2/3">
-                <div className="flex justify-center items-center">
-                  <h1 className="uppercase text-2xl sm:text-4xl font-montserrat font-[700] sm:font-[900] text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
-                    {answer.title}
-                  </h1>
-                </div>
-                <p className="text-center font-merriweather font-[300] mt-5 text-xl">
-                  {answer.description}
-                </p>
-              </div>
+              {answer.icon}
             </div>
-          ) : (
-            <div
-              key={i}
-              className="flex flex-col md:flex-row justify-center items-center"
-            >
-              <div className="w-2/3">
-                <div className="flex justify-center">
-                  <h1 className="uppercase text-2xl sm:text-4xl font-montserrat font-[700] sm:font-[900] text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
-                    {answer.title}
-                  </h1>
-                </div>
-                <p className="text-center font-merriweather font-[300] mt-5 text-xl">
-                  {answer.description}
-                </p>
+            <div className="w-2/3">
+              <div className="flex justify-center items-center">
+                <h1 className="uppercase text-2xl sm:text-4xl font-montserrat font-[700] sm:font-[900] text-center bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent">
+                  {answer.title}
+                </h1>
               </div>
-              <div className="h-full w-3/4 md:w-1/3 bg-gradient-to-br from-transparent via-transparent to-[var(--neon-green)] rounded-full">
-                {answer.icon}
-              </div>
+              <p className="text-center font-merriweather font-[300] mt-5 text-xl">
+                {answer.description}
+              </p>
             </div>
-          )
-        )}
+          </div>
+        ))}
       </div>
     </section>
   );
