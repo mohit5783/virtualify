@@ -6,12 +6,15 @@ import {
   Ubuntu,
   Merriweather,
 } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import Script from "next/script";
-import TopBar from "@/components/TopBar";
-import BottomBar from "@/components/BottomBar";
-import Breadcrumb from "@/components/ui/Breadcrumb";
+import dynamic from "next/dynamic";
+
+const TopBar = dynamic(() => import("@/components/TopBar"));
+const BottomBar = dynamic(() => import("@/components/BottomBar"));
+const Breadcrumb = dynamic(() => import("@/components/ui/Breadcrumb"));
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -169,7 +172,11 @@ export default function RootLayout({
         <TopBar />
         <Breadcrumb
           homeElement={"Home"}
-          separator={<span className="font-bold">&rarr;</span>}
+          separator={
+            <span aria-hidden="true" className="font-bold">
+              &rarr;
+            </span>
+          }
           activeClasses="bg-gradient-to-r from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] bg-clip-text text-transparent"
           containerClasses="flex p-5 font-montserrat"
           listClasses="mx-2 font-bold"
@@ -178,19 +185,7 @@ export default function RootLayout({
         {children}
         <BottomBar />
       </body>
-      <Script
-        strategy="lazyOnload"
-        defer
-        src="https://www.googletagmanager.com/gtag/js?id=G-EMXKKVZRCB"
-      />
-      <Script strategy="lazyOnload" defer id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-EMXKKVZRCB');
-      `}
-      </Script>
+      <GoogleAnalytics gaId="G-EMXKKVZRCB" />
       <Script
         strategy="lazyOnload"
         id="json_ld"

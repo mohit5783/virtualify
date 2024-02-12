@@ -27,7 +27,7 @@ const Breadcrumb = ({
     return null;
   }
   return (
-    <section id="Breadcrumb">
+    <section aria-label="Breadcrumb" id="Breadcrumb">
       <ul className={containerClasses}>
         <li className={listClasses}>
           <Link href={"/"}>{homeElement}</Link>
@@ -41,12 +41,10 @@ const Breadcrumb = ({
             ? link[0].toUpperCase() + link.slice(1, link.length)
             : link;
           return (
-            <React.Fragment key={index}>
-              <li className={itemClasses}>
-                <Link href={href}>{itemLink}</Link>
-              </li>
+            <li aria-current="location" key={index} className={itemClasses}>
+              <Link href={href}>{itemLink}</Link>
               {pathNames.length !== index + 1 && separator}
-            </React.Fragment>
+            </li>
           );
         })}
       </ul>

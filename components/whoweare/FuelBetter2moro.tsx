@@ -5,10 +5,10 @@ const FuelBetter2moro = () => {
   return (
     <section className="flex md:flex-row flex-col-reverse justify-center md:justify-between items-center p-5 md:p-20 gap-10 bg-white">
       <div className="flex flex-col w-full">
-        <h3 className="text-black text-3xl md:text-4xl font-merriweather font-black">
+        <h2 className="text-black text-3xl md:text-4xl font-merriweather font-black">
           Fueling brighter tomorrows through innovative synergy and collective
           wisdom.
-        </h3>
+        </h2>
         <p className="text-black mt-10 font-montserrat text-base md:text-lg">
           Virtualify Software Consultancy (VSC) stands as a distinguished IT
           services, consulting, and business solutions partner. With a

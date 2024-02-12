@@ -28,9 +28,9 @@ const OurPeople = () => {
         <div className="w-full flex justify-between items-center gap-2 md:gap-5 lg:gap-10 xl:gap-20">
           <div className="bg-[var(--neon-orange)] w-full h-[25vh] text-black opacity-90">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Employees
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">17+</p>
               <p className="hidden lg:block font-ubuntu font-thin text-2xl p-2 text-center">
                 quality workforce with expertise
@@ -39,9 +39,9 @@ const OurPeople = () => {
           </div>
           <div className="bg-[var(--neon-yellow)] w-full h-[25vh] text-black opacity-90">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Clients
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">80+</p>
               <p className="hidden lg:block font-ubuntu font-thin text-2xl p-2 text-center">
                 satisfied clients across the globe
@@ -50,9 +50,9 @@ const OurPeople = () => {
           </div>
           <div className="bg-[var(--neon-green)] w-full h-[25vh] text-black opacity-90">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Investors
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">8+</p>
               <p className="hidden lg:block font-ubuntu font-thin text-2xl p-2 text-center">
                 investors with a shared vision
@@ -65,9 +65,9 @@ const OurPeople = () => {
         <div className="w-full flex flex-col justify-between items-center gap-5">
           <div className="bg-[var(--neon-orange)] w-full h-[25vh] text-black">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Employees
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">17+</p>
               <p className="font-ubuntu font-thin text-2xl text-center">
                 quality workforce with expertise
@@ -76,9 +76,9 @@ const OurPeople = () => {
           </div>
           <div className="bg-[var(--neon-yellow)] w-full h-[25vh] text-black opacity-90">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Clients
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">80+</p>
               <p className="font-ubuntu font-thin text-2xl text-center">
                 satisfied clients across the globe
@@ -87,9 +87,9 @@ const OurPeople = () => {
           </div>
           <div className="bg-[var(--neon-green)] w-full h-[25vh] text-black opacity-90">
             <div className="flex flex-col justify-center items-center h-full gap-2">
-              <h5 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
+              <h4 className="lg:text-3xl md:text-2xl text-xl text-center font-montserrat font-bold">
                 Our Investors
-              </h5>
+              </h4>
               <p className="font-ubuntu font-thin text-6xl">8+</p>
               <p className="font-ubuntu font-thin text-2xl text-center">
                 investors with a shared vision
