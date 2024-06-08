@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 24,24,24;
+    --background: 24, 24, 24;
     --foreground: 210 20% 98%;
 
     --card: 224 71.4% 4.1%;
@@ -32,10 +32,14 @@
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
 
-    --neon-orange: #ff5f1f; /* 255,95,31 */
-    --neon-yellow: #ffff33; /* 255 255 51 */
-    --neon-yellow-green: #ccff00; /* 204 255 0 */
-    --neon-green: #39ff14; /* 97 100 97 */
+    --neon-orange: #ff5f1f;
+    /* 255,95,31 */
+    --neon-yellow: #ffff33;
+    /* 255 255 51 */
+    --neon-yellow-green: #ccff00;
+    /* 204 255 0 */
+    --neon-green: #39ff14;
+    /* 97 100 97 */
   }
 }
 
@@ -43,6 +47,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
