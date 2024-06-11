@@ -1,10 +1,12 @@
-import ScreenImg from "@/components/whatwedo/ScreenImg";
-import ScreenText from "@/components/whatwedo/ScreenText";
+import dynamic from "next/dynamic";
+const ScreenImg = dynamic(() => import("@/components/whatwedo/ScreenImg"));
+const ScreenText = dynamic(() => import("@/components/whatwedo/ScreenText"));
+const Screen3 = dynamic(() => import("@/components/whatwedo/Screen3"));
+const Services = dynamic(() => import("@/components/whatwedo/Services"));
+const Technologies = dynamic(() => import("@/components/whatwedo/Technologies"));
 import { AnimatedWavyBackground, Telecom } from "@/content/AllSVG";
 import ss from "../../../../public/telecom.jpg";
-import Screen3 from "@/components/whatwedo/Screen3";
-import Services from "@/components/whatwedo/Services";
-import Technologies from "@/components/whatwedo/Technologies";
+
 
 const page = () => {
   const title1 = "Empowering the Telecom Industry";

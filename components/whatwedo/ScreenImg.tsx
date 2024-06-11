@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image';
-// import { AnimatedWavyBackground, BankCreditCard } from "@/content/AllSVG";
 import Link from "next/link";
 
 

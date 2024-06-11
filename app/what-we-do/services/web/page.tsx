@@ -1,9 +1,12 @@
-import ScreenImg from "@/components/whatwedo/ScreenImg";
-import ScreenText from "@/components/whatwedo/ScreenText";
+import dynamic from "next/dynamic";
+const ScreenImg = dynamic(() => import("@/components/whatwedo/ScreenImg"));
+const ScreenText = dynamic(() => import("@/components/whatwedo/ScreenText"));
+const ApproachSection = dynamic(() => import("@/components/whatwedo/Approach"));
+const Services = dynamic(() => import("@/components/whatwedo/Services"));
+const Technologies = dynamic(() => import("@/components/whatwedo/Technologies"));
+const Strength = dynamic(() => import("@/components/whatwedo/Strength"));
 import { AnimatedWavyBackground, Web } from "@/content/AllSVG";
 import ss from "../../../../public/web.jpg";
-import Services from "@/components/whatwedo/Services";
-import Technologies from "@/components/whatwedo/Technologies";
 
 const page = () => {
   const title1 = "Transforming the Web Industry";
@@ -15,7 +18,24 @@ const page = () => {
   digital framework that ensures reliability and performance, enabling companies to drive innovation across 
   the entire web ecosystem.`;
 
-
+  const approachItems = [
+    {
+      image: "/business 1.png",
+      title: "Innovative and Scalable",
+    },
+    {
+      image: "/customer 1.png",
+      title: "User-Centric Design",
+    },
+    {
+      image: "/technology 1.png",
+      title: "Seamlessly Integrated",
+    },
+    {
+      image: "/dependable 1.png",
+      title: "Secure and Reliable",
+    },
+  ];
 
   return (
     <div>
@@ -30,6 +50,13 @@ const page = () => {
         text2={text2}
         image1={ss}
       />
+      <ApproachSection approachItems={approachItems} />
+      <ScreenText
+        title2={title2}
+        text2={text2}
+        image1={ss}
+      />
+      <Strength />
       <Services />
       <Technologies />
     </div>
