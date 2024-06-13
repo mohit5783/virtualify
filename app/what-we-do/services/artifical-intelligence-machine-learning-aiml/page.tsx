@@ -6,10 +6,10 @@ const Services = dynamic(() => import("@/components/whatwedo/Services"));
 const Technologies = dynamic(() => import("@/components/whatwedo/Technologies"));
 const Strength = dynamic(() => import("@/components/whatwedo/Strength"));
 const Partners = dynamic(() => import("@/components/whatwedo/Partners"));
+const BusinessService = dynamic(() => import("@/components/whatwedo/BusinessService"));
 import { AnimatedWavyBackground, AI } from "@/content/AllSVG";
 import ss from "../../../../public/AI.jpg";
 import ss1 from "../../../../public/ML.jpg";
-import BusinessService from "@/components/whatwedo/BusinessService";
 
 
 const page = () => {
@@ -27,6 +27,52 @@ const page = () => {
    augment, and transform spectrum. Leveraging cloud, machine learning, and data, our ML.Cloud division 
    redefines value chains and operational paradigms. With our expertise, achieve scalable, sustainable, 
    and responsible ML outcomes, from strategy to execution.`
+
+
+  const panels = [
+    {
+      heading: "Enterprise AI",
+      content: "VSC's AI InsightNext™ empowers enterprises to adopt cutting-edge technologies, enabling the development or enhancement of custom LLM models and embedded generative AI applications.",
+      image: "/Enterprise AI.jpg",
+      title: "Enterprise AI"
+    },
+    {
+      heading: "Responsible AI",
+      content: "Implementing Gen AI and Large Language Model-based solutions is intricate. Discover how our services can facilitate successful, ethical, and responsible AI implementations.",
+      image: "/responsible-ai.jpg",
+      title: "Responsible AI"
+    },
+    {
+      heading: "Data and AI",
+      content: "Explore our Data and AI services on Google Cloud, designed to provide intelligent analytics that accelerate data modernization and offer unparalleled flexibility to enterprises.",
+      image: "/data-and-ai.jpg",
+      title: "Data and AI"
+    },
+    {
+      heading: "Machine Learning on AWS",
+      content: "Learn about VSC's AIML solutions powered by AWS SageMaker, and how AI technologies like intelligent robotics and process automation can enhance customer experience.",
+      image: "/Machine Learning on AWS.jpg",
+      title: "Machine Learning on AWS"
+    },
+    {
+      heading: "Cloud and AI",
+      content: "Discover how integrating Microsoft 365 Copilot with business applications can help enterprises transform the workplace and significantly boost productivity.",
+      image: "/Cloud and AI.jpg",
+      title: "Cloud and AI"
+    },
+    {
+      heading: "Generative AI Solutions",
+      content: "VSC guides enterprises through the journey of generative AI-based business transformations using Microsoft Azure Open AI and GitHub Copilot. Find out how we can help.",
+      image: "/Generative AI Solutions.jpg",
+      title: "Generative AI Solutions"
+    },
+    {
+      heading: "AI for Operations",
+      content: "VSC's Cognix for Network aims to create resilient and business-aligned enterprise networks with solutions like NaaS, SASE, TNaaS, and open/cloud networking.",
+      image: "/AI for Operations.jpg",
+      title: "AI for Operations"
+    }
+  ];
 
   const approachItems = [
     {
@@ -47,16 +93,6 @@ const page = () => {
     },
   ];
 
-  const PartnersItems = [
-    { image: '/datasphere 1.png', title: 'DataSphere' },
-    { image: '/innovatelabs 1.png', title: 'InnovateLabs' },
-    { image: '/techcraft.jpg', title: 'TechCraft Solutions' },
-    { image: '/DI.png', title: 'Digital Innovators' },
-    { image: '/smartcorp.png', title: 'SmartCorp' },
-    { image: '/ecompulse.png', title: 'EcomPulse' },
-  ];
-
-
   return (
     <div>
       <ScreenImg
@@ -76,10 +112,9 @@ const page = () => {
         text2={text3}
         image1={ss1}
       />
-      <Strength />
-      <Partners PartnersItems={PartnersItems} />
-      <BusinessService />
-      <Services />
+      <Strength text1="AI" />
+      <Partners />
+      <BusinessService panels={panels} />
       <Technologies />
     </div>
   );

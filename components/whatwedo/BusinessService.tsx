@@ -3,52 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-const panels = [
-    {
-        heading: "Enterprise AI",
-        content: "VSC's AI InsightNext™ empowers enterprises to adopt cutting-edge technologies, enabling the development or enhancement of custom LLM models and embedded generative AI applications.",
-        image: "/Enterprise AI.jpg",
-        title: "Enterprise AI"
-    },
-    {
-        heading: "Responsible AI",
-        content: "Implementing Gen AI and Large Language Model-based solutions is intricate. Discover how our services can facilitate successful, ethical, and responsible AI implementations.",
-        image: "/responsible-ai.jpg",
-        title: "Responsible AI"
-    },
-    {
-        heading: "Data and AI",
-        content: "Explore our Data and AI services on Google Cloud, designed to provide intelligent analytics that accelerate data modernization and offer unparalleled flexibility to enterprises.",
-        image: "/data-and-ai.jpg",
-        title: "Data and AI"
-    },
-    {
-        heading: "Machine Learning on AWS",
-        content: "Learn about VSC's AIML solutions powered by AWS SageMaker, and how AI technologies like intelligent robotics and process automation can enhance customer experience.",
-        image: "/Machine Learning on AWS.jpg",
-        title: "Machine Learning on AWS"
-    },
-    {
-        heading: "Cloud and AI",
-        content: "Discover how integrating Microsoft 365 Copilot with business applications can help enterprises transform the workplace and significantly boost productivity.",
-        image: "/Cloud and AI.jpg",
-        title: "Cloud and AI"
-    },
-    {
-        heading: "Generative AI Solutions",
-        content: "VSC guides enterprises through the journey of generative AI-based business transformations using Microsoft Azure Open AI and GitHub Copilot. Find out how we can help.",
-        image: "/Generative AI Solutions.jpg",
-        title: "Generative AI Solutions"
-    },
-    {
-        heading: "AI for Operations",
-        content: "VSC's Cognix for Network aims to create resilient and business-aligned enterprise networks with solutions like NaaS, SASE, TNaaS, and open/cloud networking.",
-        image: "/AI for Operations.jpg",
-        title: "AI for Operations"
-    }
-];
+interface Panel {
+    heading: string;
+    content: string;
+    image: string;
+    title: string;
+}
 
-const BusinessService: React.FC = () => {
+interface BusinessServiceProps {
+    panels: Panel[];
+}
+
+const BusinessService: React.FC<BusinessServiceProps> = ({ panels }) => {
     const [openPanel, setOpenPanel] = useState<number | null>(0);
 
     const handleToggle = (panel: number) => {
@@ -56,7 +22,7 @@ const BusinessService: React.FC = () => {
     };
 
     return (
-        <div className="container mx-auto mt-12">
+        <div className="container mx-auto mt-12 mb-8">
             <div className="flex flex-col w-full">
                 <h2 className="text-white text-3xl md:text-4xl font-merriweather font-white">
                     AI Solutions for Your Business
@@ -70,11 +36,11 @@ const BusinessService: React.FC = () => {
                 <div className="w-1/3">
                     <div className="space-y-4">
                         {panels.map((panel, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-md">
+                            <div key={index} className="bg-white rounded-lg shadow-md ">
                                 <div className="p-0 rounded-lg" role="tab">
                                     <h4 className="text-lg font-semibold">
                                         <button
-                                            className={`flex justify-between items-center w-full text-white bg-red-600 px-8 py-4 rounded-lg focus:outline-none ${openPanel === index ? 'bg-red-700' : 'bg-red-600'}`}
+                                            className={`flex justify-center md:justify-between items-center w-full text-black bg-white px-8 py-4 rounded-lg focus:outline-none ${openPanel === index ? 'bg-gray-300' : 'bg-white'}`}
                                             onClick={() => handleToggle(index)}
                                         >
                                             {panel.heading}

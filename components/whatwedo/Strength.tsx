@@ -2,9 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { ImPointRight } from "react-icons/im";
 
+interface StrengthProps {
+    text1: string;
+}
 
-
-const Strength = () => {
+const Strength: React.FC<StrengthProps> = ({ text1 }) => {
     return (
         <section className="flex md:flex-row flex-col justify-center md:justify-between items-center p-5 md:p-20 gap-10 bg-black">
             <div className="text-left">
@@ -23,7 +25,7 @@ const Strength = () => {
                         />
                         <div className="flex items-center mb-4">
                             <ImPointRight className="text-xl text-white" />
-                            <h6 className="text-xl text-white font-montserrat ml-4">A dynamic team of highly skilled AI experts</h6>
+                            <h6 className="text-xl text-white font-montserrat ml-4">A dynamic team of highly skilled {text1} experts</h6>
                         </div>
 
                     </div>
@@ -40,7 +42,7 @@ const Strength = () => {
                         />
                         <div className="flex items-center mb-4">
                             <ImPointRight className="text-xl text-white" />
-                            <h6 className="text-xl text-white font-montserrat ml-4">Strategic alliances with leading cloud providers and AI innovators</h6>
+                            <h6 className="text-xl text-white font-montserrat ml-4">Strategic alliances with leading cloud providers and {text1} innovators</h6>
                         </div>
 
                     </div>
