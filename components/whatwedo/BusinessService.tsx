@@ -10,12 +10,13 @@ interface Panel {
     title: string;
 }
 
-interface BusinessServiceProps {
+interface PropType {
     panels: Panel[];
     text1: string;
 }
 
-const BusinessService: React.FC<BusinessServiceProps> = ({ panels, text1 }) => {
+const BusinessService = (props: PropType) => {
+    const { panels, text1 } = props;
     const [openPanel, setOpenPanel] = useState<number | null>(0);
 
     const handleToggle = (panel: number) => {
@@ -29,7 +30,7 @@ const BusinessService: React.FC<BusinessServiceProps> = ({ panels, text1 }) => {
                     {text1} Solutions for Your Business
                 </h2>
                 <p className="text-white mt-10 font-montserrat text-base md:text-lg">
-                    Whether you're just beginning with {text1} or looking to integrate responsible {text1} practices, we provide comprehensive support throughout your {text1} journey, ensuring seamless adoption and implementation at every stage.
+                    Whether you&apos;re just beginning with {text1} or looking to integrate responsible {text1} practices, we provide comprehensive support throughout your {text1} journey, ensuring seamless adoption and implementation at every stage.
                 </p>
             </div>
             <div className="flex mt-4">

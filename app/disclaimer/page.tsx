@@ -18,7 +18,7 @@ interface PlaylistData extends Document {
   videos: VideoData[];
 }
 
-const page: React.FC = () => {
+const page = () => {
   const [playlistData, setPlaylistData] = useState<PlaylistData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [showAllVideos, setShowAllVideos] = useState<boolean>(false);

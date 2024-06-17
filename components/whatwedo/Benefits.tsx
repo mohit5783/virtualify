@@ -1,11 +1,12 @@
 import React from 'react';
 import { ImPointRight } from "react-icons/im";
 
-interface BenefitsProps {
+interface PropType {
     benefits: string[];
 }
 
-const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
+const Benefits = (props: PropType) => {
+    const { benefits } = props;
     return (
         <section className="flex md:flex-row flex-col justify-center md:justify-between items-center p-5 md:p-20 gap-10 bg-black">
             <div className="text-left">

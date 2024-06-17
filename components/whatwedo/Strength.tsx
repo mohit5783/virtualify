@@ -6,7 +6,8 @@ interface StrengthProps {
     text1: string;
 }
 
-const Strength: React.FC<StrengthProps> = ({ text1 }) => {
+const Strength = (props: StrengthProps) => {
+    const { text1 } = props;
     return (
         <section className="flex md:flex-row flex-col justify-center md:justify-between items-center p-5 md:p-20 gap-10 bg-black">
             <div className="text-left">

@@ -3,7 +3,6 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { fetchPlaylistData } from "@/lib/fetchPlayListData";
-import updateCronJob from "@/lib/upCronJob";
 
 // Define types for playlist and video data
 interface VideoData {

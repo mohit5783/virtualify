@@ -6,11 +6,12 @@ interface ApproachItem {
     title: string;
 }
 
-interface ApproachSectionProps {
+interface PropType {
     approachItems: ApproachItem[];
 }
 
-const ApproachSection: React.FC<ApproachSectionProps> = ({ approachItems }) => {
+const ApproachSection = (props: PropType) => {
+    const { approachItems } = props;
     return (
         <section className="flex md:flex-row flex-col justify-center md:justify-between items-center p-5 md:p-20 gap-10 bg-black">
             <div className="text-left">
