@@ -100,7 +100,7 @@ const page = () => {
       />
       <Benefits benefits={benefits} />
       <Partners />
-      <BusinessService panels={panels} />
+      <BusinessService panels={panels} text1="SEO" />
       <Technologies />
     </div>
   );

@@ -100,7 +100,7 @@ const MobilePage = () => {
       />
       <Benefits benefits={benefits} />
       <Partners />
-      <BusinessService panels={panels} />
+      <BusinessService panels={panels} text1="Mobile" />
       <Technologies />
     </div>
   );

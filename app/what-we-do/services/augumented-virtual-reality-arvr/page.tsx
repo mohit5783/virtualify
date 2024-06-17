@@ -102,7 +102,7 @@ const page = () => {
       {/* <Benefits benefits={benefits} /> */}
       <Strength text1="AR/VR" />
       <Partners />
-      <BusinessService panels={panels} />
+      <BusinessService panels={panels} text1="ARVR" />
       <Technologies />
     </div>
   );

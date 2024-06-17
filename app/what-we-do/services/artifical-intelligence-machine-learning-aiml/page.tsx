@@ -114,7 +114,7 @@ const page = () => {
       />
       <Strength text1="AI" />
       <Partners />
-      <BusinessService panels={panels} />
+      <BusinessService panels={panels} text1="AI" />
       <Technologies />
     </div>
   );

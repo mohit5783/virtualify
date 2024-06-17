@@ -12,9 +12,10 @@ interface Panel {
 
 interface BusinessServiceProps {
     panels: Panel[];
+    text1: string;
 }
 
-const BusinessService: React.FC<BusinessServiceProps> = ({ panels }) => {
+const BusinessService: React.FC<BusinessServiceProps> = ({ panels, text1 }) => {
     const [openPanel, setOpenPanel] = useState<number | null>(0);
 
     const handleToggle = (panel: number) => {
@@ -25,10 +26,10 @@ const BusinessService: React.FC<BusinessServiceProps> = ({ panels }) => {
         <div className="container mx-auto mt-12 mb-8">
             <div className="flex flex-col w-full">
                 <h2 className="text-white text-3xl md:text-4xl font-merriweather font-white">
-                    AI Solutions for Your Business
+                    {text1} Solutions for Your Business
                 </h2>
                 <p className="text-white mt-10 font-montserrat text-base md:text-lg">
-                    Whether you're just beginning with AI or looking to integrate responsible AI practices, we provide comprehensive support throughout your AI journey, ensuring seamless adoption and implementation at every stage.
+                    Whether you're just beginning with {text1} or looking to integrate responsible {text1} practices, we provide comprehensive support throughout your {text1} journey, ensuring seamless adoption and implementation at every stage.
                 </p>
             </div>
             <div className="flex mt-4">
