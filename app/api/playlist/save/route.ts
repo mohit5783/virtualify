@@ -4,14 +4,14 @@ import Playlist from '../../../../app/models/playList'; // Adjust the import pat
 import { fetchPlaylistData } from '../../../../lib/fetchPlayListData';
 import { NextResponse } from 'next/server';
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: Request) {
     try {
         const connectionStr = process.env.NEXT_PUBLIC_MONGO_URI;
 
         // Validate environment variable
         if (!connectionStr) {
             console.error('MongoDB connection string is not set in environment variables.');
-            return res.status(500).json({ error: 'MongoDB connection string is not set in environment variables.' });
+            return NextResponse.json({ error: 'MongoDB connection string is not set in environment variables.' });
         }
 
         await mongoose.connect(connectionStr);
@@ -77,7 +77,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
         return NextResponse.json({ insertedPlaylists, success: true });
     } catch (error) {
         console.error('Error saving playlists:', error);
-        return res.status(500).json({ error: 'Failed to save playlists', success: false });
+        return NextResponse.json({ error: 'Failed to save playlists', success: false });
     } finally {
         mongoose.connection.close();
     }

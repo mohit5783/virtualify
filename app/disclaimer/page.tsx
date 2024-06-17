@@ -17,7 +17,7 @@ interface PlaylistData {
   videos: VideoData[];
 }
 
-const Page = () => {
+export default function Page() {
   const [playlistData, setPlaylistData] = useState<PlaylistData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [showAllVideos, setShowAllVideos] = useState<boolean>(false);
@@ -108,5 +108,3 @@ const Page = () => {
     </div>
   );
 };
-
-export default Page;

@@ -1,8 +1,10 @@
 // app/api/playlist/create/route.ts
-"use server"
-import { db } from "@/lib/db";
-import { NextResponse } from "next/server";
-import { fetchPlaylistData } from "@/lib/fetchPlayListData";
+"use server";
+import { PrismaClient } from '@prisma/client';
+import { NextResponse } from 'next/server';
+import { fetchPlaylistData } from '@/lib/fetchPlayListData';
+
+const prisma = new PrismaClient();
 
 // Define types for playlist and video data
 interface VideoData {
@@ -47,13 +49,14 @@ export async function POST(req: Request) {
 
                 try {
                     // Check if playlist already exists
-                    const existingPlaylist = await db.playlist.findUnique({
+                    const existingPlaylist = await prisma.playlist.findUnique({
                         where: { playlistId },
+                        include: { videos: true },
                     });
 
                     if (existingPlaylist) {
                         // Update existing playlist
-                        const updatedPlaylist = await db.playlist.update({
+                        const updatedPlaylist = await prisma.playlist.update({
                             where: { playlistId },
                             data: {
                                 playlistName,
@@ -65,8 +68,7 @@ export async function POST(req: Request) {
                                         videoId: video.videoId,
                                         views: video.views,
                                         likes: video.likes,
-                                        commentCount: video.commentCount | 0,
-                                        // Don't set the `id` field, let MongoDB generate it
+                                        commentCount: video.commentCount,
                                     })),
                                 },
                             },
@@ -75,7 +77,7 @@ export async function POST(req: Request) {
                         return updatedPlaylist;
                     } else {
                         // Create new playlist
-                        const newPlaylist = await db.playlist.create({
+                        const newPlaylist = await prisma.playlist.create({
                             data: {
                                 playlistId,
                                 playlistName,
@@ -86,8 +88,7 @@ export async function POST(req: Request) {
                                         videoId: video.videoId,
                                         views: video.views,
                                         likes: video.likes,
-                                        commentCount: video.commentCount | 0,
-                                        // Don't set the `id` field, let MongoDB generate it
+                                        commentCount: video.commentCount,
                                     })),
                                 },
                             },
@@ -101,10 +102,6 @@ export async function POST(req: Request) {
                 }
             })
         );
-
-        // const cronJobId = '12345'; // Replace with your actual cron job ID
-        // await updateCronJob(cronJobId);
-
 
         return NextResponse.json(processedPlaylists, { status: 200 });
     } catch (error) {
