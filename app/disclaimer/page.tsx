@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-
 
 interface VideoData {
   id: string;
@@ -11,13 +10,14 @@ interface VideoData {
   likes: number;
   commentCount: number;
 }
-interface PlaylistData extends Document {
+
+interface PlaylistData {
   playlistId: string;
   playlistName: string;
   videos: VideoData[];
 }
 
-const page = () => {
+const Page = () => {
   const [playlistData, setPlaylistData] = useState<PlaylistData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [showAllVideos, setShowAllVideos] = useState<boolean>(false);
@@ -109,4 +109,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
