@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
-import { fetchPlaylistData } from "@/lib/fetchPlayListData";
 
 
 interface VideoData {
