@@ -6,7 +6,7 @@ const Technologies = dynamic(() => import("@/components/whatwedo/Technologies"))
 const Benefits = dynamic(() => import("@/components/whatwedo/Benefits"));
 const Partners = dynamic(() => import("@/components/whatwedo/Partners"));
 const BusinessService = dynamic(() => import("@/components/whatwedo/BusinessService"));
-import { AnimatedWavyBackground, Cloud } from "@/content/AllSVG";
+import { AnimatedWavyBackground, SEO } from "@/content/AllSVG";
 import ss from "../../../../public/seo1.jpg";
 import ss1 from "../../../../public/seo2.jpg";
 
@@ -62,15 +62,15 @@ const page = () => {
 
   const approachItems = [
     {
-      image: "/research 1.png",
+      image: "/seo.png",
       title: "Comprehensive Keyword Research",
     },
     {
-      image: "/optimization 1.png",
+      image: "/iterative 1.png",
       title: "Strategic On-Page Optimization",
     },
     {
-      image: "/link 1.png",
+      image: "/linkbuild.png",
       title: "Effective Link Building",
     },
     {
@@ -85,7 +85,7 @@ const page = () => {
         title1={title1}
         text1={text1}
         AnimatedWavyBackground={AnimatedWavyBackground}
-        BankCreditCard={Cloud}
+        BankCreditCard={SEO}
       />
       <ScreenText
         title2={title2}

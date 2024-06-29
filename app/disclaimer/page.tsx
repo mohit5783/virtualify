@@ -22,24 +22,37 @@ export default function Page() {
   const [loading, setLoading] = useState<boolean>(true);
   const [showAllVideos, setShowAllVideos] = useState<boolean>(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/prismaList/get');
-        if (!res.ok) {
-          throw new Error('Failed to fetch playlist data');
-        }
-        const data = await res.json();
-        setPlaylistData(data);
-      } catch (error) {
-        console.error('Error fetching playlist data:', error);
-      } finally {
-        setLoading(false);
+  const fetchData = async () => {
+    try {
+      const res = await fetch('/api/prismaList/get');
+      if (!res.ok) {
+        throw new Error('Failed to fetch playlist data');
       }
+      const data = await res.json();
+      setPlaylistData(data);
+    } catch (error) {
+      console.error('Error fetching playlist data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []); // Run once on component mount
+
+  // Fetch data again when the page is revisited or refreshed
+  useEffect(() => {
+    const handleWindowFocus = () => {
+      fetchData();
     };
 
-    fetchData();
-  }, []);
+    window.addEventListener('focus', handleWindowFocus);
+
+    return () => {
+      window.removeEventListener('focus', handleWindowFocus);
+    };
+  }, []); // Only run once on component mount and clean up on unmount
 
   const toggleShowAllVideos = () => {
     setShowAllVideos(!showAllVideos);

@@ -2,12 +2,11 @@ import React from 'react'
 import Link from "next/link";
 
 
-
 const ScreenImg = ({ title1, text1, AnimatedWavyBackground, BankCreditCard }: { title1: any, text1: any, AnimatedWavyBackground: any, BankCreditCard: any }) => {
     return (
         <section className="relative">
             <div className="p-4 md:p-10 flex flex-col md:flex-row justify-between">
-                <div className="w-full md:w-1/3 px-2 md:px-5 py-10">
+                <div className="w-full md:w-2/5 px-2 md:px-5 py-10">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold font-raleway">
                         {title1}
                     </h1>

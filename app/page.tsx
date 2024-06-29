@@ -1,4 +1,4 @@
-import { EmblaOptionsType } from "embla-carousel-react";
+import { EmblaOptionsType } from "embla-carousel";
 import "./embla.css";
 import dynamic from "next/dynamic";
 const HomeHero = dynamic(() => import("@/components/HomeHero"));

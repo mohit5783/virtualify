@@ -1,6 +1,7 @@
 "use client";
 
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import { EmblaOptionsType } from "embla-carousel"
+import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import imagesByIndex from "../content/imagesByIndex";
@@ -41,15 +42,13 @@ const HomeHero = (props: PropType) => {
                   </h2>
                 </div>
                 <div
-                  className={`justify-center transition-all duration-300 ease-in-out ${
-                    showText ? "flex" : "hidden"
-                  }`}
+                  className={`justify-center transition-all duration-300 ease-in-out ${showText ? "flex" : "hidden"
+                    }`}
                 >
                   <Link
                     href="/what-we-do"
-                    aria-label={`Learn More about ${
-                      imgTextByIndex(index).title
-                    }`}
+                    aria-label={`Learn More about ${imgTextByIndex(index).title
+                      }`}
                     className="mt-5 flex items-center justify-center p-0.5 rounded-lg group bg-gradient-to-br from-[var(--neon-orange)] via-[var(--neon-yellow)] to-[var(--neon-green)] hover:text-black text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 font-raleway text-xl"
                   >
                     <span className="px-5 py-2.5 transition-all ease-in duration-200 bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -59,9 +58,8 @@ const HomeHero = (props: PropType) => {
                 </div>
               </div>
               <div
-                className={`absolute bottom-1/4 right-24 w-2/3 ${
-                  showText ? "flex" : "hidden"
-                }`}
+                className={`absolute bottom-1/4 right-24 w-2/3 ${showText ? "flex" : "hidden"
+                  }`}
               >
                 <div className="p-5 bg-black bg-opacity-85 rounded-xl">
                   <p className="text-2xl font-raleway text-[var(--neon-yellow)]">

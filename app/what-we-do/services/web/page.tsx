@@ -56,7 +56,7 @@ const page = () => {
         text2={text2}
         image1={ss}
       />
-      <Strength />
+      <Strength text1="Web" />
       <Services />
       <Technologies />
     </div>

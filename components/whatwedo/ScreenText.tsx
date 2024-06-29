@@ -16,8 +16,8 @@ function ScreenText({ title2, text2, image1 }: { title2: any, text2: any, image1
                 <Image
                     src={image1}
                     alt="Banking"
-                    width={1000}
-                    height={1000}
+                    width={750}
+                    height={500}
                     loading="lazy"
                     className="w-full object-cover h-[50vh] md:h-full"
                     sizes="(max-width: 768px) 100vw, 75vw"

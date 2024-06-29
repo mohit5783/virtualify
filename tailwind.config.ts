@@ -26,6 +26,7 @@ const config = {
         merriweather: ["var(--font-merriweather)"],
       },
       colors: {
+        green1: "#65a30d",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
