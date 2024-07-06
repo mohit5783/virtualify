@@ -4,7 +4,6 @@ const ScreenText = dynamic(() => import("@/components/whatwedo/ScreenText"));
 const Screen3 = dynamic(() => import("@/components/whatwedo/Screen3"));
 const Services = dynamic(() => import("@/components/whatwedo/Services"));
 const Technologies = dynamic(() => import("@/components/whatwedo/Technologies"));
-const Ads = dynamic(() => import("@/components/Ads"));
 import { AnimatedWavyBackground, Advertising } from "@/content/AllSVG";
 import ss from "../../../../public/advertising.jpg";
 const page = () => {
@@ -73,7 +72,6 @@ const page = () => {
       />
       <Screen3 content={content} sections={sections} mainp="Let's co-create the future of advertising with intelligent solutions." />
       <Services />
-      <Ads />
       <Technologies />
     </div>
   );
