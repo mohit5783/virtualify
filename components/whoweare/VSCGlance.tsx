@@ -67,7 +67,7 @@ const glanceData = [
   },
   {
     id: "beliefs",
-    tabListTitle: "Our beliefs",
+    tabListTitle: "Our Beliefs",
     tabContent: [
       {
         title: "Driving Towards Net-Zero Carbon",
