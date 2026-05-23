@@ -155,6 +155,8 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 }
 
 export function tassengerProductSchema() {
+  const playStoreUrl = site.playStoreUrl || absoluteUrl("/tassenger");
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -165,13 +167,15 @@ export function tassengerProductSchema() {
     applicationSubCategory: "Taskable messaging and accountability software",
     operatingSystem: "Android, Web",
     description:
-      "Tassenger is a VSC-owned messenger with an accountability layer. People chat naturally, then important messages can become visible tasks for people, teams, departments, organizations, and cross-organization spaces.",
+      "Tassenger is taskable chat for personal groups and official workspaces. People chat naturally, then important messages can become visible Tasks with owner, context, due signal, proof, review, recurrence, reports, and accountable history.",
     image: absoluteUrl("/tassenger/icon.png"),
     screenshot: [
-      absoluteUrl("/tassenger/dark-today.png"),
+      absoluteUrl("/tassenger/thread-light.jpg"),
+      absoluteUrl("/tassenger/tasks-dark.jpg"),
+      absoluteUrl("/tassenger/tablet-thread.jpg"),
+      absoluteUrl("/tassenger/ipad-tasks.jpg"),
       absoluteUrl("/tassenger/chats.png"),
-      absoluteUrl("/tassenger/proof-sheet.png"),
-      absoluteUrl("/tassenger/task-detail.png")
+      absoluteUrl("/tassenger/proof-sheet.png")
     ],
     brand: {
       "@id": absoluteUrl("/#brand")
@@ -183,17 +187,58 @@ export function tassengerProductSchema() {
       "@id": absoluteUrl("/#organization")
     },
     url: absoluteUrl("/tassenger"),
+    downloadUrl: playStoreUrl,
+    installUrl: playStoreUrl,
+    softwareHelp: absoluteUrl("/tassenger/support"),
+    releaseNotes:
+      "Launch preparation focuses on Personal chat, groups, Core Official workspaces, message-to-Task conversion, proof, review, recurrence, reports, WebApp organization setup, and public legal/support/delete-account paths.",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      url: playStoreUrl,
+      price: "0",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      category: "Free app access with organization setup paths"
+    },
+    softwareRequirements: [
+      "Android device for the mobile app",
+      "Modern web browser for organization setup and WebApp login"
+    ],
+    countriesSupported: ["IN", "MY"],
+    audience: {
+      "@type": "Audience",
+      audienceType:
+        "Individuals, families, small businesses, departments, operations teams, schools, vendors, shops, studios, finance teams, and organization owners"
+    },
     featureList: [
-      "personal chats",
-      "groups",
-      "official departments",
-      "organization spaces",
-      "accountable tasks",
+      "taskable personal chat",
+      "free groups",
+      "official groups and workspaces",
+      "message-to-Task conversion",
+      "owner and responsibility tracking",
+      "due today, overdue, blocked, review and progress states",
       "proof submission",
-      "review states",
-      "alerts",
-      "roles and permissions",
-      "organization setup"
+      "review and reopen flows",
+      "recurring work",
+      "reports and scoring signals",
+      "organization setup through WebApp",
+      "roles, permissions, people, groups, calendar and audit-aware administration"
+    ],
+    sameAs: [absoluteUrl("/tassenger"), playStoreUrl],
+    privacyPolicy: absoluteUrl("/tassenger/privacy"),
+    termsOfService: absoluteUrl("/tassenger/terms"),
+    potentialAction: [
+      {
+        "@type": "UseAction",
+        name: "Open Tassenger WebApp",
+        target: absoluteUrl("/tassenger/admin")
+      },
+      {
+        "@type": "InstallAction",
+        name: "Get Tassenger on Google Play",
+        target: playStoreUrl
+      }
     ]
   };
 }
@@ -360,17 +405,17 @@ export function tassengerPageSchema() {
         "@id": absoluteUrl("/tassenger#primaryimage"),
         url: absoluteUrl("/tassenger/opengraph-image"),
         contentUrl: absoluteUrl("/tassenger/opengraph-image"),
-        caption: "Tassenger calm messenger with accountability by VSC VirtualifyMe",
+        caption: "Tassenger taskable chat for personal groups and official workspaces by VSC VirtualifyMe",
         representativeOfPage: true
       },
       {
         "@type": "WebPage",
         "@id": absoluteUrl("/tassenger#webpage"),
         url: absoluteUrl("/tassenger"),
-        name: "Tassenger | Calm Messenger with Accountability",
+        name: "Tassenger | Taskable Chat for Personal and Official Work",
         headline: "Chat can stay natural. Work can stay accountable.",
         description:
-          "Tassenger turns everyday messages into visible, accountable tasks for people, teams, departments, organizations, and cross-organization workspaces.",
+          "Tassenger is taskable chat for personal groups and official workspaces. Messages can become visible Tasks with owner, status, proof, review, recurrence, reports, and WebApp organization setup.",
         isPartOf: {
           "@id": absoluteUrl("/#website")
         },
@@ -383,22 +428,85 @@ export function tassengerPageSchema() {
         primaryImageOfPage: {
           "@id": absoluteUrl("/tassenger#primaryimage")
         },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [".tassenger-hero h1", ".tassenger-hero-copy > p", ".tassenger-product-story h2"]
+        },
         breadcrumb: {
           "@id": absoluteUrl("/tassenger#breadcrumb")
         },
-        hasPart: {
-          "@id": absoluteUrl("/tassenger#faq")
-        },
+        hasPart: [
+          {
+            "@id": absoluteUrl("/tassenger#setup-steps")
+          },
+          {
+            "@id": absoluteUrl("/tassenger#faq")
+          }
+        ],
         audience: {
           "@type": "BusinessAudience",
-          audienceType: "People, teams, departments, SMBs, organizations, vendors, managers and cross-organization workspaces"
+          audienceType:
+            "People, families, shops, schools, departments, SMBs, organization owners, vendors, managers and cross-organization workspaces"
         },
-        significantLink: [absoluteUrl("/tassenger/admin"), absoluteUrl("/contact"), site.whatsapp],
+        significantLink: [
+          absoluteUrl("/tassenger/admin"),
+          absoluteUrl("/tassenger/privacy"),
+          absoluteUrl("/tassenger/terms"),
+          absoluteUrl("/tassenger/support"),
+          absoluteUrl("/tassenger/delete-account"),
+          site.playStoreUrl,
+          site.whatsapp
+        ].filter(Boolean),
         keywords:
-          "taskable messaging, accountable chat, team accountability app, organization task management, department task tracking, proof submission, task review, VSC Tassenger",
+          "Tassenger, taskable chat, taskable messaging, accountable chat app, personal group tasks, official workspace chat, message to task app, team accountability app, organization task management, WebApp organization setup, department task tracking, proof submission, task review, recurring tasks, VSC Tassenger",
         inLanguage: "en-IN"
       },
       graphNode(tassengerProductSchema()),
+      {
+        "@type": "HowTo",
+        "@id": absoluteUrl("/tassenger#setup-steps"),
+        name: "How an organization starts with Tassenger",
+        description:
+          "A simple setup path for organizations that want to use Tassenger for taskable chat, people, groups, roles, policy defaults, and mobile work.",
+        totalTime: "PT15M",
+        tool: [
+          {
+            "@type": "HowToTool",
+            name: "Tassenger WebApp"
+          },
+          {
+            "@type": "HowToTool",
+            name: "Tassenger mobile app"
+          }
+        ],
+        step: [
+          {
+            "@type": "HowToStep",
+            position: 1,
+            name: "Open the WebApp",
+            text: "Use the Tassenger admin entry to open the WebApp login and begin organization setup.",
+            url: absoluteUrl("/tassenger/admin")
+          },
+          {
+            "@type": "HowToStep",
+            position: 2,
+            name: "Prepare organization rules",
+            text: "Add people, groups, roles, org chart, calendar, policy defaults, and activation rules before the team starts daily work."
+          },
+          {
+            "@type": "HowToStep",
+            position: 3,
+            name: "Work from mobile conversations",
+            text: "Use Tassenger chat for everyday coordination, then turn important messages into Tasks with visible responsibility."
+          },
+          {
+            "@type": "HowToStep",
+            position: 4,
+            name: "Track proof, review and reports",
+            text: "Use proof, review, blocker, recurrence, reports, scoring and audit signals to keep work from disappearing inside chat."
+          }
+        ]
+      },
       {
         "@id": absoluteUrl("/tassenger#faq"),
         ...graphNode(faqSchema(tassengerFaqs))
@@ -909,13 +1017,13 @@ export function tassengerAdminPageSchema() {
       webPageNode({
         id: absoluteUrl("/tassenger#software"),
         path: "/tassenger/admin",
-        name: "Tassenger Admin | Organization Setup",
-        headline: "Tassenger organization setup before the work begins.",
+        name: "Tassenger WebApp Login | Organization Setup",
+        headline: "Tassenger WebApp login for organization setup.",
         description:
-          "Tassenger web admin entry for organization setup, people, roles, permissions, departments, and policies.",
+          "Tassenger WebApp entry for organization setup, people, roles, permissions, groups, policies, reports, and official workspace administration.",
         breadcrumb: absoluteUrl("/tassenger/admin#breadcrumb"),
         mainEntity: absoluteUrl("/tassenger#software"),
-        keywords: "Tassenger admin, organization setup, roles permissions, departments, VSC"
+        keywords: "Tassenger WebApp login, Tassenger admin, organization setup, roles permissions, groups, departments, VSC"
       }),
       graphNode(tassengerProductSchema()),
       {

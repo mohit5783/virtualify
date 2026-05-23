@@ -4226,3 +4226,939 @@ h3 {
     font-size: 16px;
   }
 }
+
+/* Tassenger product landing refresh */
+.tassenger-wrap {
+  width: min(calc(100% - 48px), 1240px);
+  margin: 0 auto;
+}
+
+.tassenger-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 92px) 0 70px;
+  border-bottom: 1px solid rgba(7, 120, 111, 0.16);
+  background:
+    radial-gradient(circle at 78% 12%, rgba(16, 167, 166, 0.14), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f7fbfb 100%);
+}
+
+.tassenger-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(460px, 1.18fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 78px);
+}
+
+.tassenger-brand-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.tassenger-brand-line img {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  box-shadow: 0 18px 44px rgba(8, 120, 111, 0.2);
+}
+
+.tassenger-brand-line span {
+  display: grid;
+  gap: 3px;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.tassenger-brand-line small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.tassenger-hero h1 {
+  margin: 28px 0 0;
+  max-width: 760px;
+  color: var(--ink);
+  font-size: clamp(48px, 6.8vw, 88px);
+  line-height: 0.96;
+  letter-spacing: 0;
+  font-weight: 950;
+}
+
+.tassenger-hero-copy > p,
+.tassenger-product-story p,
+.tassenger-section-head p,
+.tassenger-webapp p,
+.tassenger-privacy p,
+.tassenger-faq-grid > div > p,
+.tassenger-final p {
+  color: var(--muted);
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.55;
+  font-weight: 680;
+}
+
+.tassenger-hero-copy > p {
+  max-width: 690px;
+  margin-top: 26px;
+}
+
+.tassenger-actions,
+.tassenger-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.tassenger-actions .button,
+.tassenger-final-actions .button {
+  min-height: 52px;
+}
+
+.tassenger-store-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tassenger-store-status a,
+.tassenger-store-soon {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  border: 1px solid rgba(8, 120, 111, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.tassenger-store-status a {
+  color: var(--teal);
+}
+
+.tassenger-hero-stage {
+  position: relative;
+  min-height: 620px;
+}
+
+.tassenger-stage-card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid rgba(8, 120, 111, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(8, 120, 111, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 120, 111, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 65% 10%, rgba(16, 167, 166, 0.18), transparent 26rem),
+    #f8fcfc;
+  background-size: 42px 42px, 42px 42px, auto, auto;
+  box-shadow: var(--shadow);
+}
+
+.tassenger-tablet-frame {
+  position: absolute;
+  right: -34px;
+  bottom: 38px;
+  width: min(82%, 620px);
+  overflow: hidden;
+  border: 8px solid #061b34;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(6, 27, 52, 0.22);
+}
+
+.tassenger-tablet-frame img,
+.tassenger-screen-stack img {
+  width: 100%;
+  height: auto;
+}
+
+.tassenger-phone {
+  position: absolute;
+  overflow: hidden;
+  border: 8px solid #071114;
+  border-radius: 34px;
+  background: #fff;
+  box-shadow: 0 28px 76px rgba(6, 27, 52, 0.26);
+}
+
+.tassenger-phone img,
+.tassenger-story-phone img,
+.tassenger-screen-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tassenger-phone-main {
+  left: 34px;
+  top: 44px;
+  width: min(42%, 260px);
+  aspect-ratio: 720 / 1564;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+.tassenger-phone-dark {
+  right: 42px;
+  top: 12px;
+  width: min(36%, 218px);
+  aspect-ratio: 720 / 1565;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+
+.tassenger-floating-note {
+  position: absolute;
+  z-index: 5;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  max-width: 390px;
+  border: 1px solid rgba(8, 120, 111, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 18px;
+  box-shadow: 0 18px 44px rgba(6, 27, 52, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.tassenger-floating-note b,
+.tassenger-floating-note span {
+  display: block;
+}
+
+.tassenger-floating-note b {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.tassenger-floating-note span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 780;
+}
+
+.tassenger-proof-strip {
+  border-bottom: 1px solid rgba(6, 27, 52, 0.1);
+  background: #fff;
+}
+
+.tassenger-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tassenger-stat-grid article {
+  min-height: 134px;
+  padding: 28px;
+  border-left: 1px solid rgba(6, 27, 52, 0.1);
+}
+
+.tassenger-stat-grid article:last-child {
+  border-right: 1px solid rgba(6, 27, 52, 0.1);
+}
+
+.tassenger-stat-grid strong {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(31px, 4vw, 48px);
+  line-height: 1;
+  font-weight: 950;
+}
+
+.tassenger-stat-grid span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+.tassenger-product-story,
+.tassenger-feature-system,
+.tassenger-modes,
+.tassenger-webapp,
+.tassenger-screens,
+.tassenger-use-cases,
+.tassenger-privacy,
+.tassenger-faq,
+.tassenger-final {
+  padding: clamp(72px, 9vw, 118px) 0;
+}
+
+.tassenger-story-grid,
+.tassenger-webapp-grid,
+.tassenger-privacy-grid,
+.tassenger-faq-grid,
+.tassenger-final-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 72px);
+}
+
+.tassenger-product-story h2,
+.tassenger-feature-system h2,
+.tassenger-modes h2,
+.tassenger-webapp h2,
+.tassenger-screens h2,
+.tassenger-use-cases h2,
+.tassenger-privacy h2,
+.tassenger-faq h2,
+.tassenger-final h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(40px, 5.6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: 0;
+  font-weight: 950;
+}
+
+.tassenger-product-story p,
+.tassenger-webapp p,
+.tassenger-privacy p,
+.tassenger-final p {
+  margin-top: 24px;
+}
+
+.tassenger-check-list,
+.tassenger-mode-grid ul {
+  display: grid;
+  gap: 13px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tassenger-check-list li,
+.tassenger-mode-grid li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 820;
+}
+
+.tassenger-check-list li::before,
+.tassenger-mode-grid li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--teal-2);
+}
+
+.tassenger-story-phone {
+  width: min(340px, 100%);
+  justify-self: center;
+  overflow: hidden;
+  border: 9px solid #071114;
+  border-radius: 38px;
+  aspect-ratio: 1080 / 2400;
+  background: #f8ffff;
+  box-shadow: 0 30px 92px rgba(6, 27, 52, 0.22);
+}
+
+.tassenger-feature-system,
+.tassenger-screens,
+.tassenger-privacy,
+.tassenger-final {
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(16, 167, 166, 0.2), transparent 30rem),
+    linear-gradient(145deg, #04111f 0%, #061b34 58%, #062b35 100%);
+}
+
+.tassenger-section-head {
+  max-width: 870px;
+}
+
+.tassenger-section-head-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tassenger-section-head p {
+  margin-top: 20px;
+}
+
+.tassenger-feature-system h2,
+.tassenger-screens h2,
+.tassenger-privacy h2,
+.tassenger-final h2 {
+  color: #fff;
+}
+
+.tassenger-feature-system .tassenger-section-head p,
+.tassenger-screens .tassenger-section-head p,
+.tassenger-privacy p,
+.tassenger-final p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.tassenger-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.tassenger-feature-grid article {
+  min-height: 240px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.065);
+  padding: 26px;
+}
+
+.tassenger-feature-grid span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(16, 167, 166, 0.16);
+  padding: 0 12px;
+  color: #9be8e4;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.tassenger-feature-grid h3,
+.tassenger-mode-grid h3,
+.tassenger-legal-card h3 {
+  margin: 18px 0 0;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.tassenger-feature-grid p {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.tassenger-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.tassenger-mode-grid article {
+  min-height: 430px;
+  border: 1px solid rgba(6, 27, 52, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  padding: clamp(26px, 4vw, 38px);
+  box-shadow: 0 18px 52px rgba(6, 27, 52, 0.08);
+}
+
+.tassenger-mode-grid h3 {
+  margin-top: 0;
+  color: var(--ink);
+}
+
+.tassenger-mode-grid p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 760;
+}
+
+.tassenger-webapp {
+  background: #f7fbfb;
+}
+
+.tassenger-webapp-panel {
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: clamp(24px, 4vw, 34px);
+  box-shadow: var(--shadow);
+}
+
+.tassenger-webapp-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.tassenger-webapp-top strong,
+.tassenger-webapp-top span {
+  display: block;
+}
+
+.tassenger-webapp-top strong {
+  font-size: 26px;
+  font-weight: 950;
+}
+
+.tassenger-webapp-top span {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  font-weight: 820;
+}
+
+.tassenger-webapp-top a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0 18px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.tassenger-webapp-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.tassenger-webapp-tiles article {
+  min-height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px;
+}
+
+.tassenger-webapp-tiles b,
+.tassenger-webapp-tiles span {
+  display: block;
+}
+
+.tassenger-webapp-tiles b {
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.tassenger-webapp-tiles span {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 760;
+}
+
+.tassenger-screen-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.tassenger-screen-card {
+  display: grid;
+  gap: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.18);
+}
+
+.tassenger-screen-wide {
+  grid-column: 1 / -1;
+}
+
+.tassenger-screen-card > div:first-child {
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.tassenger-screen-wide > div:first-child {
+  border: 7px solid #03090f;
+  background: #fff;
+}
+
+.tassenger-screen-card img {
+  width: 100%;
+  height: auto;
+}
+
+.tassenger-screen-contain {
+  display: grid;
+  min-height: 430px;
+  place-items: center;
+  padding: 18px;
+  background: #edf6f7;
+}
+
+.tassenger-screen-contain img {
+  width: auto;
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.tassenger-screen-dark-phone {
+  background: #020d12;
+}
+
+.tassenger-screen-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.08;
+  font-weight: 950;
+}
+
+.tassenger-screen-card p {
+  margin: -8px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 720;
+}
+
+.tassenger-use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.tassenger-use-case-grid article {
+  min-height: 160px;
+  border: 1px solid rgba(6, 27, 52, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  padding: 22px;
+}
+
+.tassenger-use-case-grid b,
+.tassenger-use-case-grid span {
+  display: block;
+}
+
+.tassenger-use-case-grid b {
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 950;
+}
+
+.tassenger-use-case-grid span {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.48;
+  font-weight: 760;
+}
+
+.tassenger-legal-card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  padding: clamp(24px, 4vw, 34px);
+}
+
+.tassenger-legal-card > span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(16, 167, 166, 0.16);
+  padding: 0 12px;
+  color: #9be8e4;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.tassenger-legal-card div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.tassenger-legal-card a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.tassenger-legal-card a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tassenger-faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.tassenger-faq-list details {
+  border: 1px solid rgba(6, 27, 52, 0.12);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.tassenger-faq-list summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 56px 22px 22px;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 950;
+}
+
+.tassenger-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.tassenger-faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: var(--teal);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.tassenger-faq-list details[open] summary::after {
+  content: "-";
+}
+
+.tassenger-faq-list details p {
+  margin: 0;
+  padding: 0 22px 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 720;
+}
+
+.tassenger-final img {
+  width: 68px;
+  height: 68px;
+  border-radius: 15px;
+}
+
+.tassenger-final-actions {
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+}
+
+.tassenger-final-actions .tassenger-store-soon {
+  min-height: 52px;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+@media (max-width: 1080px) {
+  .tassenger-hero-grid,
+  .tassenger-story-grid,
+  .tassenger-webapp-grid,
+  .tassenger-privacy-grid,
+  .tassenger-faq-grid,
+  .tassenger-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tassenger-hero-stage {
+    min-height: 620px;
+  }
+
+  .tassenger-feature-grid,
+  .tassenger-use-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tassenger-final-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .tassenger-wrap {
+    width: min(calc(100% - 28px), 1240px);
+  }
+
+  .tassenger-hero {
+    padding: 42px 0 52px;
+  }
+
+  .tassenger-brand-line img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .tassenger-brand-line span {
+    font-size: 19px;
+  }
+
+  .tassenger-hero h1 {
+    margin-top: 24px;
+    font-size: clamp(42px, 15vw, 58px);
+  }
+
+  .tassenger-hero-copy > p,
+  .tassenger-product-story p,
+  .tassenger-section-head p,
+  .tassenger-webapp p,
+  .tassenger-privacy p,
+  .tassenger-faq-grid > div > p,
+  .tassenger-final p {
+    font-size: 17px;
+  }
+
+  .tassenger-actions,
+  .tassenger-actions .button,
+  .tassenger-final-actions,
+  .tassenger-final-actions .button,
+  .tassenger-final-actions .tassenger-store-soon {
+    width: 100%;
+  }
+
+  .tassenger-hero-stage {
+    min-height: 520px;
+  }
+
+  .tassenger-stage-card {
+    border-radius: 8px;
+  }
+
+  .tassenger-tablet-frame {
+    right: -155px;
+    bottom: 52px;
+    width: 520px;
+  }
+
+  .tassenger-phone-main {
+    left: 18px;
+    top: 32px;
+    width: 48%;
+  }
+
+  .tassenger-phone-dark {
+    right: 14px;
+    top: 72px;
+    width: 40%;
+  }
+
+  .tassenger-floating-note {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .tassenger-stat-grid,
+  .tassenger-mode-grid,
+  .tassenger-feature-grid,
+  .tassenger-webapp-tiles,
+  .tassenger-screen-board,
+  .tassenger-use-case-grid,
+  .tassenger-legal-card div {
+    grid-template-columns: 1fr;
+  }
+
+  .tassenger-screen-wide {
+    grid-column: auto;
+  }
+
+  .tassenger-screen-card {
+    padding: 14px;
+  }
+
+  .tassenger-screen-contain {
+    min-height: 340px;
+  }
+
+  .tassenger-screen-contain img {
+    max-height: 430px;
+  }
+
+  .tassenger-stat-grid article {
+    border-right: 1px solid rgba(6, 27, 52, 0.1);
+    min-height: 116px;
+    padding: 22px;
+  }
+
+  .tassenger-product-story,
+  .tassenger-feature-system,
+  .tassenger-modes,
+  .tassenger-webapp,
+  .tassenger-screens,
+  .tassenger-use-cases,
+  .tassenger-privacy,
+  .tassenger-faq,
+  .tassenger-final {
+    padding: 64px 0;
+  }
+
+  .tassenger-product-story h2,
+  .tassenger-feature-system h2,
+  .tassenger-modes h2,
+  .tassenger-webapp h2,
+  .tassenger-screens h2,
+  .tassenger-use-cases h2,
+  .tassenger-privacy h2,
+  .tassenger-faq h2,
+  .tassenger-final h2 {
+    font-size: clamp(36px, 12vw, 48px);
+  }
+
+  .tassenger-section-head-center {
+    text-align: left;
+  }
+
+  .tassenger-story-phone {
+    width: min(315px, 92vw);
+  }
+
+  .tassenger-screen-phone {
+    width: min(315px, 92vw);
+  }
+
+  .tassenger-webapp-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

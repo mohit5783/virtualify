@@ -8,6 +8,7 @@ import { useReportWebVitals } from "next/web-vitals";
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || (process.env.NODE_ENV === "production" ? "G-EMXKKVZRCB" : undefined);
 const SCROLL_DEPTHS = [25, 50, 75, 90] as const;
+const GA_LOAD_DELAY_MS = 5000;
 
 type AnalyticsValue = string | number | boolean | undefined | null;
 type AnalyticsParams = Record<string, AnalyticsValue>;
@@ -248,10 +249,19 @@ export function Analytics() {
             window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', ${JSON.stringify(GA_MEASUREMENT_ID)}, { send_page_view: false });
+            window.addEventListener('load', function() {
+              window.setTimeout(function() {
+                if (document.querySelector('script[data-ga4-loader="true"]')) return;
+                var script = document.createElement('script');
+                script.async = true;
+                script.dataset.ga4Loader = 'true';
+                script.src = ${JSON.stringify(`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`)};
+                document.head.appendChild(script);
+              }, ${GA_LOAD_DELAY_MS});
+            }, { once: true });
           `
         }}
       />
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="lazyOnload" />
       <Suspense fallback={null}>
         <AnalyticsEvents />
       </Suspense>

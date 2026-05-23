@@ -5,13 +5,14 @@ import { JsonLd, tassengerAdminPageSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Tassenger Admin | Organization Setup",
+  title: "Tassenger WebApp Login | Organization Setup",
   description:
-    "Tassenger web admin entry for organization setup, people, roles, permissions, departments, and policies.",
+    "Open the Tassenger WebApp for organization setup, people, roles, permissions, groups, policies, reports, and official workspace administration.",
   path: "/tassenger/admin",
   image: "/tassenger/opengraph-image",
   keywords: [
     "Tassenger admin",
+    "Tassenger WebApp login",
     "Tassenger organization setup",
     "roles permissions departments",
     "accountable messaging admin",
@@ -20,11 +21,8 @@ export const metadata = pageMetadata({
 });
 
 export default function TassengerAdminPage() {
-  const hasLiveAdmin =
-    Boolean(site.tassengerAdminUrl) &&
-    site.tassengerAdminUrl !== "/tassenger/admin" &&
-    site.tassengerAdminUrl !== `${site.baseUrl}/tassenger/admin`;
-  const adminHref = hasLiveAdmin ? site.tassengerAdminUrl : site.whatsapp;
+  const adminHref = site.tassengerAdminUrl;
+  const isExternalAdmin = adminHref.startsWith("http");
 
   return (
     <>
@@ -32,21 +30,21 @@ export default function TassengerAdminPage() {
       <section className="admin-entry-hero">
         <div className="home-wrap admin-entry-grid">
           <div>
-            <h1>Tassenger organization setup before the work begins.</h1>
+            <h1>Tassenger WebApp login for organization setup.</h1>
             <p>
-              The admin entry prepares organizations for people, roles, permissions, departments, invite flows, policy
-              rules, task review, proof, and audit trails. When the production web app is ready, this page can become
-              the clean bridge into `/admin` after login.
+              The branded admin entry opens the live Tassenger WebApp for people, roles, permissions, groups, org chart,
+              calendar, policy rules, reports, task review, proof, and audit-aware administration before daily work
+              begins on mobile.
             </p>
             <div className="home-actions">
               <ButtonLink
                 href={adminHref}
-                external={!hasLiveAdmin}
-                analyticsEvent={hasLiveAdmin ? "tassenger_admin_login_click" : "tassenger_admin_setup_request"}
+                external={isExternalAdmin}
+                analyticsEvent="tassenger_admin_login_click"
                 analyticsLabel="Tassenger admin hero"
                 analyticsSection="admin_entry_hero"
               >
-                {hasLiveAdmin ? "Open admin" : "Request setup"} <ArrowIcon />
+                Open WebApp <ArrowIcon />
               </ButtonLink>
               <ButtonLink
                 href="/tassenger"
@@ -68,12 +66,12 @@ export default function TassengerAdminPage() {
           <div className="contact-card">
             <h2>Admin login</h2>
             <p className="lead">
-              The production admin URL can be connected here when ready. Until then, the page routes interested
-              organizations to VSC so onboarding does not land on a broken surface.
+              This page keeps the public VirtualifyMe URL stable while the live Tassenger WebApp runs from the current
+              deployment target. Organizations can start here and still get setup help from VSC when needed.
             </p>
             <div className="page-actions">
-              <ButtonLink href={adminHref} external={!hasLiveAdmin}>
-                {hasLiveAdmin ? "Open admin" : "Request setup"} <ArrowIcon />
+              <ButtonLink href={adminHref} external={isExternalAdmin}>
+                Open WebApp <ArrowIcon />
               </ButtonLink>
               <ButtonLink href="/tassenger" variant="secondary">
                 Back to Tassenger <ArrowIcon />

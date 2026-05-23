@@ -10,8 +10,8 @@ export const site = {
   phone: "+91 98260 65894",
   whatsapp:
     "https://api.whatsapp.com/send?phone=919826065894&text=Hi%20VSC%2C%20I%20want%20to%20talk%20about%20a%20software%20project.",
-  tassengerAdminUrl: "/tassenger/admin",
-  playStoreUrl: "",
+  tassengerAdminUrl: "https://tasngr3-web.pages.dev/",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.virtualify.tasngr3",
   appStoreUrl: "",
   socials: {
     linkedin: "https://www.linkedin.com/company/virtualifyme/",
@@ -334,14 +334,14 @@ export const products: Product[] = [
     slug: "tassenger",
     title: "Tassenger",
     status: "Owned",
-    short: "A calm messenger with an accountability layer.",
+    short: "Taskable chat for personal groups and official workspaces.",
     summary:
-      "Tassenger is a VSC-owned product. People chat naturally, then important messages can become visible, accountable tasks for people, departments, organizations, and cross-org spaces.",
-    bullets: ["Personal chats and groups", "Official departments", "Organization setup", "Tasks that stay visible"],
+      "Tassenger is a VSC-owned product. People chat naturally, then important messages can become visible Tasks with owner, context, proof, review, recurrence, reports, and organization setup.",
+    bullets: ["Personal and official chat", "Message-to-Task conversion", "WebApp organization setup", "Proof, review and reports"],
     href: "/tassenger",
-    seoTitle: "Tassenger | VSC Product",
+    seoTitle: "Tassenger | Taskable Chat by VSC",
     metaDescription:
-      "Tassenger is a VSC-owned calm messenger with an accountability layer for personal chats, groups, departments, and organizations."
+      "Tassenger is taskable chat by VSC for personal groups, official workspaces, message-to-Task accountability, proof, review, reports, and WebApp setup."
   },
   {
     slug: "travelcrafter",
@@ -419,24 +419,29 @@ export const fmtMetrics = [
 
 export const tassengerFaqs = [
   {
-    question: "Is Tassenger another task manager?",
+    question: "Is Tassenger another task manager or another chat app?",
     answer:
-      "No. It starts from chat because many teams, shops, families, vendors, and departments already coordinate there. The task layer keeps responsibilities visible."
+      "No. Tassenger starts where work already starts: inside conversations. Chat stays natural, but important messages can become Tasks with owner, context, due signal, status, proof, review, and history."
   },
   {
-    question: "Can organizations use it?",
+    question: "What is the difference between Personal and Official work?",
     answer:
-      "Yes. Tassenger is planned for people, roles, departments, permissions, reviewer rules, invite flows, proof, due changes, and organization policies."
+      "Personal mode stays light for families, friends, trips, errands, and informal groups. Official mode adds organization rules, due dates, priorities, queues, blockers, proof, review, reports, scoring, audit signals, and role-aware control."
   },
   {
-    question: "Are the app stores live?",
+    question: "What is the Tassenger WebApp for?",
     answer:
-      "Tassenger is about to launch. Store CTAs can stay as coming-soon until the official Play Store and App Store links are ready."
+      "The WebApp is the organization control room. Owners and admins use it to prepare people, roles, groups, org chart, calendar, policy defaults, activation, reports, and audit-friendly administration before daily work happens on mobile."
   },
   {
-    question: "Is web admin separate from chat?",
+    question: "Where can I get Tassenger?",
     answer:
-      "Yes. The web admin entry is for organization setup, roles, departments, permissions, policies, and account administration."
+      "The WebApp login is available now through the Tassenger admin entry. The Google Play listing uses the package com.virtualify.tasngr3. The App Store version is planned and will be linked when the Apple app record is ready."
+  },
+  {
+    question: "Can VSC help set up an organization?",
+    answer:
+      "Yes. VSC can help an organization prepare its first workspace, people, groups, roles, permissions, task policy, and onboarding path so Tassenger starts with clean operating rules instead of becoming another unmanaged chat group."
   }
 ] as const;
 
