@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "About VSC VirtualifyMe | Software Company in Harda",
   description:
-    "VirtualifyMe is Virtualify Software Consultancy Pvt. Ltd., a software company from Harda, Madhya Pradesh.",
+    "VirtualifyMe is Virtualify Software Consultancy Pvt. Ltd. aka VSC, a software company from Harda, Madhya Pradesh.",
   path: "/about",
   keywords: [
     "About VSC",
