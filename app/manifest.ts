@@ -1,39 +1,20 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Virtualify Software Consultancy",
+    name: "VSC VirtualifyMe",
     short_name: "VSC",
-    description:
-      "Virtualify Software Consultancy Pvt. Ltd. is a software development company based in India. We provide software development services to our clients.",
+    description: "VirtualifyMe software company website and Tassenger product entry.",
     start_url: "/",
     display: "standalone",
-    background_color: "#181818",
-    theme_color: "#181818",
-
+    background_color: "#ffffff",
+    theme_color: "#061b34",
     icons: [
       {
-        src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
-      },
-      {
-        src: "/icons/VSC192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        src: "/icons/VSC512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: "logo.webp",
-        sizes: "any",
-        type: "image/webp",
-        purpose: "any",
-      },
-    ],
+        src: "/brand/vsc-logo.png",
+        sizes: "1024x1024",
+        type: "image/png"
+      }
+    ]
   };
 }

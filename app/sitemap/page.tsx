@@ -1,9 +1,63 @@
-const page = () => {
-  return (
-    <div>
-      <h1>Sitemap</h1>
-    </div>
-  );
-};
+import Link from "next/link";
+import { PageHero } from "@/components/ui";
+import { pageMetadata } from "@/lib/metadata";
+import { industries, legalPages, products, services } from "@/lib/site";
 
-export default page;
+export const metadata = pageMetadata({
+  title: "Sitemap | VSC VirtualifyMe",
+  description: "HTML sitemap for VSC VirtualifyMe pages, services, industries, products, work, and legal pages.",
+  path: "/sitemap"
+});
+
+const groups = [
+  {
+    title: "Core",
+    links: [
+      ["/", "Home"],
+      ["/tassenger", "Tassenger"],
+      ["/tassenger/admin", "Tassenger Admin"],
+      ["/work", "Work"],
+      ["/work/free-malaysia-today", "Free Malaysia Today"],
+      ["/about", "About"],
+      ["/contact", "Contact"]
+    ]
+  },
+  {
+    title: "Services",
+    links: services.map((service) => [`/services/${service.slug}`, service.title])
+  },
+  {
+    title: "Industries",
+    links: industries.map((industry) => [`/industries/${industry.slug}`, industry.title])
+  },
+  {
+    title: "Products",
+    links: products.map((product) => [product.href, product.title])
+  },
+  {
+    title: "Legal",
+    links: legalPages.map((page) => [`/${page.slug}`, page.title])
+  }
+] as const;
+
+export default function SitemapPage() {
+  return (
+    <>
+      <PageHero label="Sitemap" title="Every launch page in one place." text="Use this sitemap to inspect the launch information architecture for VSC." />
+      <section className="section">
+        <div className="container legal-grid">
+          {groups.map((group) => (
+            <article className="legal-card" key={group.title}>
+              <h3>{group.title}</h3>
+              <div className="contact-list">
+                {group.links.map(([href, label]) => (
+                  <Link href={href} key={`${group.title}-${href}`}>{label}</Link>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

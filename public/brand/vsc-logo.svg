@@ -1,0 +1,10 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+	<style>
+		.s0 { opacity: 1;fill: #4f8b93 } 
+		.s1 { opacity: 1;fill: #0a1933 } 
+	</style>
+	<g id="Layer 2">
+		<path id="Path 0" class="s0" d="m805 99l89 9-395 709-238-433 96-1 144 257z"/>
+		<path id="Path 1" class="s1" d="m96 100l575 5-61 88-424 2-1 635 185 5 50 90-325 1zm796 266l2 560h-324l54-92 179-3v-295z"/>
+	</g>
+</svg>
