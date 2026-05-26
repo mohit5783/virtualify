@@ -5,7 +5,8 @@ import { industries, legalPages, products, services } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Sitemap | VSC VirtualifyMe",
-  description: "HTML sitemap for VSC VirtualifyMe pages, services, industries, products, work, and legal pages.",
+  description:
+    "HTML sitemap for VirtualifyMe pages, including Tassenger, services, industries, products, work, company, contact, and legal pages.",
   path: "/sitemap"
 });
 
@@ -43,7 +44,11 @@ const groups = [
 export default function SitemapPage() {
   return (
     <>
-      <PageHero label="Sitemap" title="Every launch page in one place." text="Use this sitemap to inspect the launch information architecture for VSC." />
+      <PageHero
+        label="Sitemap"
+        title="Every launch page in one place."
+        text="Use this sitemap to find the main public pages on the VirtualifyMe website, including VSC services, industries, products, work, Tassenger resources, company information, contact details, and legal pages."
+      />
       <section className="section">
         <div className="container legal-grid">
           {groups.map((group) => (

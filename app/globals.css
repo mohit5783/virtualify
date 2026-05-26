@@ -1253,6 +1253,37 @@ h3 {
   line-height: 1.45;
 }
 
+.footer-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer-social-row a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.footer-social-row a:hover {
+  border-color: rgba(118, 208, 214, 0.7);
+  background: rgba(118, 208, 214, 0.14);
+  transform: translateY(-1px);
+}
+
 .footer-column {
   display: grid;
   align-content: start;

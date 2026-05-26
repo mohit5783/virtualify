@@ -110,6 +110,38 @@ export function Footer() {
           </div>
           <p>{site.legalName}</p>
           <p>{site.address}</p>
+          <div className="footer-social-row" aria-label="VSC social media links">
+            <Link
+              href={site.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VSC on LinkedIn"
+              data-analytics-label="linkedin"
+              data-analytics-section="footer"
+            >
+              in
+            </Link>
+            <Link
+              href={site.socials.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VSC on X"
+              data-analytics-label="x"
+              data-analytics-section="footer"
+            >
+              X
+            </Link>
+            <Link
+              href={site.socials.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VSC on YouTube"
+              data-analytics-label="youtube"
+              data-analytics-section="footer"
+            >
+              YT
+            </Link>
+          </div>
         </div>
         <FooterColumn
           title="Services"
@@ -154,8 +186,11 @@ export function Footer() {
             { label: "About", href: "/about" },
             { label: "Contact", href: "/contact" },
             { label: "Privacy Notice", href: "/privacy-notice" },
+            { label: "Cookie Policy", href: "/cookie-policy" },
             { label: "Terms of Use", href: "/terms-of-use" },
-            { label: "Security Policy", href: "/security-policy" }
+            { label: "Security Policy", href: "/security-policy" },
+            { label: "Disclaimer", href: "/disclaimer" },
+            { label: "Sitemap", href: "/sitemap" }
           ]}
         />
       </div>

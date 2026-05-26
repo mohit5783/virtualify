@@ -14,8 +14,8 @@ export const site = {
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.virtualify.tasngr3",
   appStoreUrl: "",
   socials: {
-    linkedin: "https://www.linkedin.com/company/virtualifyme/",
-    x: "https://x.com/virtualifyme",
+    linkedin: "https://www.linkedin.com/company/virtualify-software-consultancy/posts/?feedView=all",
+    x: "https://twitter.com/VirtualifyMe",
     youtube: "https://www.youtube.com/@Virtualify"
   }
 } as const;
@@ -470,15 +470,31 @@ export const legalPages = [
     slug: "cookie-policy",
     title: "Cookie Policy",
     description:
-      "How VSC may use essential, analytics, and performance cookies on VirtualifyMe websites.",
+      "How VirtualifyMe uses essential, analytics, performance, and third-party cookies across the VSC website and product pages.",
     sections: [
       {
-        heading: "Current use",
-        body: "The public VSC site is designed to be lightweight. If analytics, embedded media, or third-party tools are enabled, cookies may be used to understand performance and improve user experience."
+        heading: "Purpose of this policy",
+        body: "This Cookie Policy explains how VirtualifyMe, the public brand of Virtualify Software Consultancy Pvt. Ltd., may use cookies and similar technologies on www.virtualifyme.com and related public product pages. It should be read with the Privacy Notice and Terms of Use."
       },
       {
-        heading: "Control",
-        body: "Visitors can control cookies through browser settings. Blocking non-essential cookies should not prevent access to core website content."
+        heading: "Essential website cookies",
+        body: "Some cookies or browser storage may be required for basic website behavior, security, page delivery, and accessibility. These are used only to keep the website working reliably."
+      },
+      {
+        heading: "Analytics and performance",
+        body: "VSC may use analytics tools such as Google Analytics to understand page visits, traffic sources, device behavior, CTA clicks, and website performance. This helps us improve content, navigation, product pages, and lead paths without trying to identify every visitor personally."
+      },
+      {
+        heading: "Third-party and embedded services",
+        body: "Links or embedded tools from services such as WhatsApp, LinkedIn, X, YouTube, Google, app stores, hosting providers, or analytics platforms may set their own cookies after you interact with them. Their use is governed by their own policies."
+      },
+      {
+        heading: "How visitors can control cookies",
+        body: "You can block, delete, or restrict cookies from your browser settings. Blocking non-essential cookies should not stop you from reading the main website content, but some analytics, embedded media, or external integrations may behave differently."
+      },
+      {
+        heading: "Updates",
+        body: "VSC may update this Cookie Policy when website features, analytics tools, product pages, or legal requirements change."
       }
     ]
   },
@@ -518,19 +534,31 @@ export const legalPages = [
     slug: "disclaimer",
     title: "Disclaimer",
     description:
-      "Clarifies service descriptions, product directions, and client-platform positioning on the VSC website.",
+      "General disclaimer for VSC service descriptions, product concepts, case studies, public information, and external links.",
     sections: [
       {
-        heading: "Service descriptions",
-        body: "Service pages describe areas where VSC provides planning, delivery, modernization, stabilization, visibility, automation, and specialist coordination. Final scope depends on discovery, project requirements, and written agreement."
+        heading: "General information",
+        body: "The content on this website is provided for general business, product, and service information. It should not be treated as legal, financial, security, compliance, or professional advice for a specific situation."
       },
       {
-        heading: "Product ownership",
-        body: "Tassenger is a VSC-owned product. Product directions, concepts, upcoming ideas, and explorations describe VSC roadmap thinking and may change before any public release."
+        heading: "Service and capability descriptions",
+        body: "Service pages describe areas where VSC can plan, build, modernize, stabilize, secure, automate, and improve software systems. Final scope, timelines, responsibilities, deliverables, and commercial terms are confirmed separately for each project."
       },
       {
-        heading: "FMT positioning",
-        body: "Free Malaysia Today is a client platform story associated with VSC service work across stability, publishing delivery, and mobile behavior."
+        heading: "Product and product-lab information",
+        body: "Tassenger is a VSC-owned product. Other product or lab entries may describe concepts, explorations, or future directions and may change, pause, merge, or evolve before public release."
+      },
+      {
+        heading: "Case studies and client references",
+        body: "Client and platform stories describe work context and public-facing outcomes where VSC can reference them. They do not guarantee identical results for every organization because traffic, team structure, infrastructure, content, budgets, and operating constraints differ."
+      },
+      {
+        heading: "External links",
+        body: "This website may link to third-party websites, social platforms, app stores, client platforms, or service providers. VSC is not responsible for the content, availability, policies, or behavior of external websites."
+      },
+      {
+        heading: "Accuracy and updates",
+        body: "VSC tries to keep public information current and useful, but website content may change without notice. Visitors should contact VSC directly before relying on any information for a project, purchase, partnership, or product decision."
       }
     ]
   }
