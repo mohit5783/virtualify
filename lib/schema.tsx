@@ -155,7 +155,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 }
 
 export function tassengerProductSchema() {
-  const playStoreUrl = site.playStoreUrl || absoluteUrl("/tassenger");
+  const androidEarlyAccessUrl = site.tassengerAndroidEarlyAccessUrl || site.playStoreUrl || absoluteUrl("/tassenger");
 
   return {
     "@context": "https://schema.org",
@@ -170,12 +170,12 @@ export function tassengerProductSchema() {
       "Tassenger is taskable chat for personal groups and official workspaces. People chat naturally, then important messages can become visible Tasks with owner, context, due signal, proof, review, recurrence, reports, and accountable history.",
     image: absoluteUrl("/tassenger/icon.png"),
     screenshot: [
-      absoluteUrl("/tassenger/thread-light.jpg"),
-      absoluteUrl("/tassenger/tasks-dark.jpg"),
-      absoluteUrl("/tassenger/tablet-thread.jpg"),
-      absoluteUrl("/tassenger/ipad-tasks.jpg"),
-      absoluteUrl("/tassenger/chats.png"),
-      absoluteUrl("/tassenger/proof-sheet.png")
+      absoluteUrl("/tassenger/store/iphone-chats.jpg"),
+      absoluteUrl("/tassenger/store/iphone-tasks.jpg"),
+      absoluteUrl("/tassenger/store/iphone-task-detail.jpg"),
+      absoluteUrl("/tassenger/store/ipad-studio-crew.jpg"),
+      absoluteUrl("/tassenger/store/ipad-tasks.jpg"),
+      absoluteUrl("/tassenger/store/ipad-task-detail.jpg")
     ],
     brand: {
       "@id": absoluteUrl("/#brand")
@@ -187,19 +187,19 @@ export function tassengerProductSchema() {
       "@id": absoluteUrl("/#organization")
     },
     url: absoluteUrl("/tassenger"),
-    downloadUrl: playStoreUrl,
-    installUrl: playStoreUrl,
+    downloadUrl: androidEarlyAccessUrl,
+    installUrl: androidEarlyAccessUrl,
     softwareHelp: absoluteUrl("/tassenger/support"),
     releaseNotes:
       "Launch preparation focuses on Personal chat, groups, Core Official workspaces, message-to-Task conversion, proof, review, recurrence, reports, WebApp organization setup, and public legal/support/delete-account paths.",
     isAccessibleForFree: true,
     offers: {
       "@type": "Offer",
-      url: playStoreUrl,
+      url: androidEarlyAccessUrl,
       price: "0",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      category: "Free app access with organization setup paths"
+      category: "Free Android early access with organization setup paths"
     },
     softwareRequirements: [
       "Android device for the mobile app",
@@ -225,7 +225,7 @@ export function tassengerProductSchema() {
       "organization setup through WebApp",
       "roles, permissions, people, groups, calendar and audit-aware administration"
     ],
-    sameAs: [absoluteUrl("/tassenger"), playStoreUrl],
+    sameAs: [absoluteUrl("/tassenger"), androidEarlyAccessUrl, site.tassengerTesterGroupUrl],
     privacyPolicy: absoluteUrl("/tassenger/privacy"),
     termsOfService: absoluteUrl("/tassenger/terms"),
     potentialAction: [
@@ -236,8 +236,13 @@ export function tassengerProductSchema() {
       },
       {
         "@type": "InstallAction",
-        name: "Get Tassenger on Google Play",
-        target: playStoreUrl
+        name: "Join Tassenger Android Early Access",
+        target: androidEarlyAccessUrl
+      },
+      {
+        "@type": "JoinAction",
+        name: "Join Tassenger tester group",
+        target: site.tassengerTesterGroupUrl
       }
     ]
   };

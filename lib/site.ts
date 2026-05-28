@@ -11,7 +11,11 @@ export const site = {
   whatsapp:
     "https://api.whatsapp.com/send?phone=919826065894&text=Hi%20VSC%2C%20I%20want%20to%20talk%20about%20a%20software%20project.",
   tassengerAdminUrl: "https://tasngr3-web.pages.dev/",
+  tassengerAndroidPackage: "com.virtualify.tasngr3",
+  tassengerAndroidEarlyAccessUrl: "https://play.google.com/apps/testing/com.virtualify.tasngr3",
+  tassengerTesterGroupUrl: "https://groups.google.com/g/tassenger-early-birds",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.virtualify.tasngr3",
+  appleAppId: "6772484825",
   appStoreUrl: "",
   socials: {
     linkedin: "https://www.linkedin.com/company/virtualify-software-consultancy/posts/?feedView=all",
@@ -436,7 +440,7 @@ export const tassengerFaqs = [
   {
     question: "Where can I get Tassenger?",
     answer:
-      "The WebApp login is available now through the Tassenger admin entry. The Google Play listing uses the package com.virtualify.tasngr3. The App Store version is planned and will be linked when the Apple app record is ready."
+      "The WebApp login is available now through the Tassenger admin entry. Android early access is available for the package com.virtualify.tasngr3. The iOS app is going live soon and will be linked when the public App Store page is available."
   },
   {
     question: "Can VSC help set up an organization?",

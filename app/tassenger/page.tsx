@@ -9,7 +9,7 @@ import { site, tassengerFaqs } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Tassenger | Taskable Chat for Personal and Official Work",
   description:
-    "Tassenger is taskable chat for personal groups and official workspaces. Turn important messages into visible Tasks with owner, proof, review, recurrence, reports, and WebApp setup.",
+    "Tassenger is taskable chat for personal groups and official workspaces. Turn chats into tasks with personal tasks, official accountability, proof, review, and WebApp setup.",
   path: "/tassenger",
   image: "/tassenger/opengraph-image",
   imageAlt: "Tassenger product page showing taskable chat, Tasks above messages, WebApp setup, proof, review, and official workspace screens.",
@@ -32,6 +32,9 @@ export const metadata = pageMetadata({
 
 const setupHelpUrl =
   "https://api.whatsapp.com/send?phone=919826065894&text=Hi%20VSC%2C%20I%20want%20help%20setting%20up%20Tassenger%20for%20my%20organization.";
+
+const androidEarlyAccessUrl = site.tassengerAndroidEarlyAccessUrl;
+const androidTesterGroupUrl = site.tassengerTesterGroupUrl;
 
 const productStats = [
   {
@@ -128,21 +131,137 @@ const legalLinks = [
   ["Delete account", "/tassenger/delete-account"]
 ] as const;
 
-function AppStoreSoon() {
-  return <span className="tassenger-store-soon">App Store coming soon</span>;
+const phoneScreens = [
+  {
+    src: "/tassenger/store/iphone-chats.jpg",
+    alt: "Tassenger iPhone chats with tasks above messages",
+    title: "Chats with Tasks above messages.",
+    text: "Conversations stay familiar while work created from them stays visible.",
+    width: 1284,
+    height: 2778
+  },
+  {
+    src: "/tassenger/store/iphone-tasks.jpg",
+    alt: "Tassenger iPhone task command center",
+    title: "Personal tasks. Official accountability.",
+    text: "Blocked, Do First, Review, and In progress states make attention clear.",
+    width: 1284,
+    height: 2778
+  },
+  {
+    src: "/tassenger/store/iphone-task-detail.jpg",
+    alt: "Tassenger iPhone task detail with accountability context",
+    title: "Turn chats into tasks.",
+    text: "Task detail keeps owner, status, context, proof, and review in one place.",
+    width: 1284,
+    height: 2778
+  }
+] as const;
+
+const tabletScreens = [
+  {
+    src: "/tassenger/store/ipad-studio-crew.jpg",
+    alt: "Tassenger iPad workspace conversation",
+    title: "Workspace conversations.",
+    text: "Tablet layouts give teams more room for chat, work context, and shared responsibility.",
+    width: 2732,
+    height: 2048
+  },
+  {
+    src: "/tassenger/store/ipad-tasks.jpg",
+    alt: "Tassenger iPad tasks overview",
+    title: "Task command center.",
+    text: "A wider task surface helps official work stay readable across queues and states.",
+    width: 2732,
+    height: 2048
+  },
+  {
+    src: "/tassenger/store/ipad-task-detail.jpg",
+    alt: "Tassenger iPad task detail",
+    title: "Detail that keeps work accountable.",
+    text: "The task view keeps decisions, messages, and next steps from getting buried.",
+    width: 2732,
+    height: 2048
+  }
+] as const;
+
+function GooglePlayMark() {
+  return (
+    <svg viewBox="0 0 32 36" aria-hidden="true">
+      <path d="M3 2.4 19.2 18 3 33.6Z" fill="#34a853" />
+      <path d="m19.2 18 5.3-5.1 6.4 3.7c1.5.9 1.5 2.9 0 3.8l-6.4 3.7Z" fill="#fbbc04" />
+      <path d="M3 2.4 24.5 12.9 19.2 18Z" fill="#4285f4" />
+      <path d="m3 33.6 16.2-15.6 5.3 5.1Z" fill="#ea4335" />
+    </svg>
+  );
 }
 
-function PlayStoreLink({ location }: { location: string }) {
+function IosMark() {
+  return <span className="tassenger-ios-mark">iOS</span>;
+}
+
+function StoreBadgeLink({
+  href,
+  eyebrow,
+  label,
+  note,
+  location
+}: {
+  href: string;
+  eyebrow: string;
+  label: string;
+  note?: string;
+  location: string;
+}) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="tassenger-store-badge"
+      data-analytics-event="tassenger_android_early_access_click"
+      data-analytics-label={label}
+      data-analytics-section={location}
+      aria-label={`${eyebrow} on ${label}`}
+    >
+      <span className="tassenger-store-mark">
+        <GooglePlayMark />
+      </span>
+      <span>
+        <small>{eyebrow}</small>
+        <b>{label}</b>
+        {note ? <em>{note}</em> : null}
+      </span>
+    </Link>
+  );
+}
+
+function StoreBadgeSoon() {
+  return (
+    <span className="tassenger-store-badge tassenger-store-badge-soon" role="status" aria-label="iOS available soon">
+      <span className="tassenger-store-mark">
+        <IosMark />
+      </span>
+      <span>
+        <small>iOS available soon</small>
+        <b>App Store</b>
+        <em>Review in progress</em>
+      </span>
+    </span>
+  );
+}
+
+function TesterGroupLink({ location }: { location: string }) {
   return (
     <ButtonLink
-      href={site.playStoreUrl}
+      href={androidTesterGroupUrl}
       external
-      variant="dark"
-      analyticsEvent="tassenger_play_store_click"
-      analyticsLabel={`${location} Google Play`}
+      variant="secondary"
+      analyticsEvent="tassenger_tester_group_click"
+      analyticsLabel={`${location} tester group`}
       analyticsSection={location}
     >
-      Get Android app <ArrowIcon />
+      Join tester group <ArrowIcon />
     </ButtonLink>
   );
 }
@@ -161,22 +280,32 @@ export default function TassengerPage() {
                 <small>by VSC VirtualifyMe</small>
               </span>
             </div>
-            <h1>Chat can stay natural. Work can stay accountable.</h1>
+            <h1>Taskable chat for personal groups and official workspaces.</h1>
             <p>
-              Tassenger is taskable chat for personal groups and official workspaces. Send messages, create Tasks from
-              the right message, assign responsibility, track proof, review, recurrence, queues, blockers, and reports
-              without letting work disappear inside a conversation.
+              Turn chats into tasks. Personal tasks. Official accountability. Tassenger keeps messaging natural, then
+              gives important work a visible place with owner, status, proof, review, and history.
             </p>
+            <div className="tassenger-store-actions" aria-label="Tassenger app download links">
+              <StoreBadgeLink
+                href={androidEarlyAccessUrl}
+                eyebrow="Join Android Early Access"
+                label="Google Play"
+                note="Early access"
+                location="tassenger_hero"
+              />
+              <StoreBadgeSoon />
+            </div>
             <div className="tassenger-actions">
+              <TesterGroupLink location="tassenger_hero" />
               <ButtonLink
                 href="/tassenger/admin"
                 analyticsEvent="tassenger_admin_click"
                 analyticsLabel="Hero WebApp login"
                 analyticsSection="tassenger_hero"
+                variant="secondary"
               >
                 Open WebApp login <ArrowIcon />
               </ButtonLink>
-              <PlayStoreLink location="tassenger_hero" />
               <ButtonLink
                 href={setupHelpUrl}
                 external
@@ -190,16 +319,26 @@ export default function TassengerPage() {
             </div>
             <div className="tassenger-store-status" aria-label="Tassenger availability">
               <Link
-                href={site.playStoreUrl}
+                href={androidEarlyAccessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-analytics-event="tassenger_play_store_click"
-                data-analytics-label="Hero store status"
+                data-analytics-event="tassenger_android_early_access_click"
+                data-analytics-label="Hero early access status"
                 data-analytics-section="tassenger_hero"
               >
-                Google Play package ready
+                Android early access open
               </Link>
-              <AppStoreSoon />
+              <Link
+                href={androidTesterGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event="tassenger_tester_group_click"
+                data-analytics-label="Hero tester group status"
+                data-analytics-section="tassenger_hero"
+              >
+                Tester group open
+              </Link>
+              <span>iOS App Store review in progress</span>
             </div>
           </div>
 
@@ -207,36 +346,36 @@ export default function TassengerPage() {
             <div className="tassenger-stage-card">
               <div className="tassenger-tablet-frame">
                 <Image
-                  src="/tassenger/tablet-thread.jpg"
-                  alt="Tassenger tablet conversation with task above messages"
-                  width={1400}
-                  height={875}
+                  src="/tassenger/store/ipad-studio-crew.jpg"
+                  alt="Tassenger iPad workspace conversation"
+                  width={2732}
+                  height={2048}
                   priority
                   sizes="(max-width: 760px) 92vw, 48vw"
                 />
               </div>
               <div className="tassenger-phone tassenger-phone-main">
                 <Image
-                  src="/tassenger/thread-light.jpg"
-                  alt="Tassenger iPhone conversation showing tasks above messages"
-                  width={720}
-                  height={1564}
+                  src="/tassenger/store/iphone-chats.jpg"
+                  alt="Tassenger iPhone chats with tasks above messages"
+                  width={1284}
+                  height={2778}
                   priority
                   sizes="(max-width: 760px) 52vw, 260px"
                 />
               </div>
               <div className="tassenger-phone tassenger-phone-dark">
                 <Image
-                  src="/tassenger/tasks-dark.jpg"
-                  alt="Tassenger dark task command center with blocked, Do First and review states"
-                  width={720}
-                  height={1565}
+                  src="/tassenger/store/iphone-tasks.jpg"
+                  alt="Tassenger iPhone task command center with blocked, Do First and review states"
+                  width={1284}
+                  height={2778}
                   loading="eager"
                   sizes="(max-width: 760px) 42vw, 220px"
                 />
               </div>
               <div className="tassenger-floating-note">
-                <b>Tasks stay above messages.</b>
+                <b>Turn chats into tasks.</b>
                 <span>Owner, context, status, proof, review, and history stay findable after the chat moves on.</span>
               </div>
             </div>
@@ -393,55 +532,49 @@ export default function TassengerPage() {
       <section className="tassenger-screens" id="screens">
         <div className="tassenger-wrap">
           <div className="tassenger-section-head">
-            <h2>Real product screens, not concept art.</h2>
+            <h2>Current product screens, ready for launch.</h2>
             <p>
-              The page uses actual Tassenger surfaces: conversations with Tasks above messages, task command center,
-              tablet conversation layout, and organization-scale work views.
+              Phone and tablet screenshots show the actual product surfaces: chats, tasks, task detail, and wider
+              workspace views.
             </p>
           </div>
-          <div className="tassenger-screen-board">
-            <article className="tassenger-screen-card tassenger-screen-wide">
-              <div>
-                <Image
-                  src="/tassenger/tablet-thread.jpg"
-                  alt="Tassenger Android tablet chat and task layout"
-                  width={1400}
-                  height={875}
-                  loading="lazy"
-                  sizes="(max-width: 900px) 92vw, 1040px"
-                />
-              </div>
-              <h3>Tasks stay above messages.</h3>
-              <p>The conversation remains familiar, while the work created from it stays visible before the chat moves on.</p>
-            </article>
-            <article className="tassenger-screen-card">
-              <div className="tassenger-screen-contain tassenger-screen-dark-phone">
-              <Image
-                src="/tassenger/tasks-dark.jpg"
-                alt="Tassenger dark task command center"
-                width={720}
-                height={1565}
-                loading="lazy"
-                sizes="(max-width: 760px) 82vw, 360px"
-              />
-              </div>
-              <h3>Blocked, Do First, Review, In progress.</h3>
-              <p>A dedicated Tasks surface helps people decide what needs attention instead of hunting through chat history.</p>
-            </article>
-            <article className="tassenger-screen-card">
-              <div className="tassenger-screen-contain">
-                <Image
-                  src="/tassenger/ipad-tasks.jpg"
-                  alt="Tassenger iPad task command center"
-                  width={820}
-                  height={1093}
-                  loading="lazy"
-                  sizes="(max-width: 760px) 82vw, 480px"
-                />
-              </div>
-              <h3>Workspace-scale task views.</h3>
-              <p>Tablet and larger screens give official teams more room for queues, review states, and operating context.</p>
-            </article>
+          <div className="tassenger-store-screens">
+            <div className="tassenger-device-row tassenger-phone-row" aria-label="Tassenger phone screenshots">
+              {phoneScreens.map((screen) => (
+                <article className="tassenger-device-card tassenger-device-phone" key={screen.src}>
+                  <div>
+                    <Image
+                      src={screen.src}
+                      alt={screen.alt}
+                      width={screen.width}
+                      height={screen.height}
+                      loading="lazy"
+                      sizes="(max-width: 760px) 78vw, 290px"
+                    />
+                  </div>
+                  <h3>{screen.title}</h3>
+                  <p>{screen.text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="tassenger-device-row tassenger-tablet-row" aria-label="Tassenger tablet screenshots">
+              {tabletScreens.map((screen) => (
+                <article className="tassenger-device-card tassenger-device-tablet" key={screen.src}>
+                  <div>
+                    <Image
+                      src={screen.src}
+                      alt={screen.alt}
+                      width={screen.width}
+                      height={screen.height}
+                      loading="lazy"
+                      sizes="(max-width: 760px) 88vw, (max-width: 1080px) 44vw, 360px"
+                    />
+                  </div>
+                  <h3>{screen.title}</h3>
+                  <p>{screen.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -527,11 +660,22 @@ export default function TassengerPage() {
             <Image src="/tassenger/icon.png" alt="Tassenger app icon" width={68} height={68} loading="lazy" />
             <h2>Start with one real conversation. Turn one message into work.</h2>
             <p>
-              Open the WebApp for organization setup, install Tassenger from the Android listing, or ask VSC to walk
-              your team through the first workspace.
+              Join Android early access, enter the tester group, open the WebApp for organization setup, or ask VSC to
+              walk your team through the first workspace.
             </p>
           </div>
           <div className="tassenger-final-actions">
+            <div className="tassenger-store-actions" aria-label="Tassenger final app download links">
+              <StoreBadgeLink
+                href={androidEarlyAccessUrl}
+                eyebrow="Join Android Early Access"
+                label="Google Play"
+                note="Early access"
+                location="tassenger_final"
+              />
+              <StoreBadgeSoon />
+            </div>
+            <TesterGroupLink location="tassenger_final" />
             <ButtonLink
               href="/tassenger/admin"
               analyticsEvent="tassenger_admin_click"
@@ -540,7 +684,6 @@ export default function TassengerPage() {
             >
               Open WebApp login <ArrowIcon />
             </ButtonLink>
-            <PlayStoreLink location="tassenger_final" />
             <ButtonLink
               href={setupHelpUrl}
               external
@@ -551,7 +694,6 @@ export default function TassengerPage() {
             >
               Ask VSC for setup help <ArrowIcon />
             </ButtonLink>
-            <AppStoreSoon />
           </div>
         </div>
       </section>
