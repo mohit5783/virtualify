@@ -1,6 +1,6 @@
 # Tassenger Privacy Policy
 
-Last updated: May 22, 2026
+Last updated: May 28, 2026
 
 This Privacy Policy explains how **VIRTUALIFY SOFTWARE CONSULTANCY PRIVATE LIMITED** ("Virtualify", "we", "us", or "our") collects, uses, stores, shares, and protects information when you use **Tassenger**.
 
@@ -27,25 +27,29 @@ For personal Tassenger use, Virtualify decides how the app data is processed. Fo
 
 We collect and process:
 
+- Apple or Google sign-in identifiers and sign-in result;
+- provider email, display name, and profile image where the provider supplies them;
 - phone number;
-- one-time password verification result;
+- email address;
+- phone verification result if a fallback or future phone-verification flow is used;
 - account ID;
 - active sessions and refresh tokens;
 - device push tokens for notifications;
 - app version and platform information needed to operate the service.
 
-We use this to create and secure your account, sign you in, keep your session active, and send notifications that you have enabled.
+We use this to create and secure your account, sign you in, keep your session active, support contact discovery, and send notifications that you have enabled. Google or Apple sign-in is the normal account login path. Phone number is required profile/contact metadata unless a separate verification flow marks it as verified.
 
 ### Profile data
 
 You may provide:
 
 - name;
+- phone number;
+- email address;
 - optional About/status line;
-- optional email address;
 - optional profile photo.
 
-Your name, About line, and profile photo may be visible to people who can see your profile, such as people in your chats, groups, or workspaces. Your phone number is account-owned and is used for identity and sign-in.
+Your name, About line, and profile photo may be visible to people who can see your profile, such as people in your chats, groups, or workspaces. Your phone number and email address are used for profile completeness, contact discovery, support, and account management. Phone number is not the normal sign-in identity.
 
 ### Contacts and discovery
 
@@ -54,9 +58,10 @@ Contacts are optional, but they help Tassenger show people you already know who 
 If you allow Contacts access:
 
 - the app reads phone numbers from your device contacts;
-- phone numbers are normalized and sent for backend matching in a privacy-conscious form;
+- the app may read email addresses from your device contacts;
+- phone numbers and email addresses are normalized where possible and sent for backend matching in a privacy-conscious form;
 - the matching flow is used to find active Tassenger users and direct-chat status;
-- we do not upload contact names, email addresses, notes, or full address-book records for browsing;
+- we do not upload contact names, notes, or full address-book records for browsing;
 - we do not create chats automatically from your contacts;
 - the current matching flow does not store your uploaded phonebook as a browsable server-side address book.
 
@@ -135,7 +140,7 @@ Tassenger currently does not process payments. If paid features are added later,
 
 We use information to:
 
-- create, verify, and secure accounts;
+- create, verify, and secure accounts through Apple/Google sign-in and backend sessions;
 - deliver messages, tasks, reminders, media, and notifications;
 - sync data across your devices;
 - show contacts who are on Tassenger when you allow contact matching;

@@ -47,8 +47,8 @@ export const tassengerLegalPages: readonly TassengerLegalPage[] = [
     title: "Tassenger Support",
     seoTitle: "Tassenger Support | VirtualifyMe",
     description:
-      "Get help with Tassenger account access, OTP sign-in, contacts, notifications, chats, groups, official workspaces, tasks, media, privacy, and deletion.",
-    keywords: ["Tassenger support", "Tassenger OTP help", "Tassenger account help", "Tassenger workspace support"],
+      "Get help with Tassenger account access, Google or Apple sign-in, profile setup, contacts, notifications, chats, groups, official workspaces, tasks, media, privacy, and deletion.",
+    keywords: ["Tassenger support", "Tassenger sign-in help", "Tassenger account help", "Tassenger workspace support"],
     label: "Support",
     ctaTitle: "Need Tassenger support?",
     ctaText: "Email support with your account phone number, device details, app version, and a clear issue description."

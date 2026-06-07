@@ -1,6 +1,6 @@
 # Tassenger Terms of Service
 
-Last updated: May 22, 2026
+Last updated: May 28, 2026
 
 These Terms of Service ("Terms") govern your access to and use of **Tassenger**, a taskable messenger operated by **VIRTUALIFY SOFTWARE CONSULTANCY PRIVATE LIMITED** ("Virtualify", "we", "us", or "our").
 
@@ -16,7 +16,7 @@ Related pages:
 
 Tassenger is a messenger with built-in tasks. It supports:
 
-- phone-number sign-in;
+- Google/Apple sign-in;
 - personal one-to-one chats;
 - groups;
 - Official Workspaces;
@@ -33,21 +33,22 @@ You must be old enough to use Tassenger under the laws that apply to you. If loc
 You are responsible for:
 
 - providing a phone number you are authorized to use;
-- protecting your phone, SIM, OTP, device lock, and active sessions;
+- providing an email address you are authorized to use;
+- protecting your Apple/Google account, device lock, verification codes, and active sessions;
 - keeping your profile information accurate and non-misleading;
 - activity that occurs through your account.
 
-Tassenger support will never ask for your OTP or verification code. Do not share it with anyone.
+Tassenger support will never ask for your Apple/Google credentials, password, OTP, or verification code. Do not share them with anyone.
 
-## 3. Phone sign-in and notifications
+## 3. Account sign-in and notifications
 
-Tassenger uses phone-number verification and one-time passwords to authenticate accounts. Standard carrier charges may apply.
+Tassenger uses Google and Apple sign-in for the normal app login path. Your phone number is required profile/contact metadata and may be separately verified by a backend verification flow where the product requires higher trust. If a phone verification or one-time-code fallback is enabled, standard carrier charges may apply.
 
 Tassenger may use push notifications for messages, tasks, reminders, mentions, and account activity. You can disable notifications in your device settings, but doing so may cause you to miss time-sensitive task or message alerts.
 
 ## 4. Your profile
 
-Your profile may include your name, optional About line, optional email, and optional profile photo. You agree that your profile information:
+Your profile includes your name, email address, and phone number, and may include an optional About line and optional profile photo. You agree that your profile information:
 
 - is accurate enough for people to identify you in the app;
 - does not impersonate someone else;
@@ -58,7 +59,7 @@ Your name, About line, and photo may be visible to users who can see your profil
 
 ## 5. Contacts and discovery
 
-Tassenger may ask for Contacts permission so you can find people already on Tassenger and invite people who are not yet using it. Contacts access is optional. If you allow it, contact phone numbers may be processed for matching. Contact names, emails, notes, and full address-book records are not uploaded for browsing.
+Tassenger may ask for Contacts permission so you can find people already on Tassenger and invite people who are not yet using it. Contacts access is optional. If you allow it, contact phone numbers and email addresses may be processed for matching. Contact names, notes, and full address-book records are not uploaded for browsing.
 
 You can deny or revoke Contacts permission. Some discovery features may be limited if you do.
 

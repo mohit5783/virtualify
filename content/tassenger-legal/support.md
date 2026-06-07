@@ -1,8 +1,8 @@
 # Tassenger Support
 
-Last updated: May 22, 2026
+Last updated: June 8, 2026
 
-Tassenger Support helps with account access, OTP sign-in, contacts, notifications, chats, groups, Official Workspaces, tasks, media, privacy, and account deletion.
+Tassenger Support helps with account access, Google or Apple sign-in, profile setup, contacts, notifications, chats, groups, Official Workspaces, tasks, media, privacy, and account deletion.
 
 Support email: [vscsocialhandle@gmail.com](mailto:vscsocialhandle@gmail.com)
 
@@ -14,24 +14,26 @@ Tassenger support will never ask for your OTP, verification code, password, full
 
 If someone asks for your OTP while claiming to be Tassenger or Virtualify support, do not share it. Email [vscsocialhandle@gmail.com](mailto:vscsocialhandle@gmail.com) with the subject **Security**.
 
-## Account and OTP help
+## Account and sign-in help
 
-Tassenger signs you in with your phone number and a one-time password.
+Tassenger uses Google or Apple sign-in for the normal app login path. Your phone number is profile/contact metadata and is not your normal sign-in identity.
 
-If you are not receiving the OTP:
+If Google or Apple sign-in does not complete:
 
-- check that the country code and phone number are correct;
-- confirm your phone has signal and can receive SMS;
-- wait for the resend timer before requesting another code;
-- check whether your carrier or device is filtering short-code or unknown SMS messages.
+- confirm the Google or Apple account sheet finished successfully;
+- confirm your device is online;
+- try again after closing and reopening Tassenger;
+- contact support if the app keeps returning to the sign-in screen.
 
-If your number changed, contact support with the old number, new number, and any optional email on your profile. We may require verification before helping with account recovery.
+If a future phone verification or one-time-code fallback is enabled and you are not receiving a code, check that the country code and phone number are correct, confirm your phone can receive SMS, and wait for the resend timer before requesting another code.
+
+If your number changed, contact support with the old number, new number, and any optional email on your profile. We may require identity verification before helping with account recovery.
 
 ## Profile help
 
 You can edit your name, About line, optional email, and profile photo from the **Me** tab.
 
-Your phone number is account-owned and is not edited from profile settings. If your phone number changes, contact support.
+Your phone number is profile/contact metadata used for discovery, support, and account management. You can update it from profile settings where the app allows; sensitive recovery or verification cases may still require support review.
 
 If your profile photo does not update, try again on a stable connection. Tassenger may crop or compress photos so profile images load quickly and look consistent.
 
