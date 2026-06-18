@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
-import { ButtonLink, ContactBand } from "@/components/ui";
+import { ButtonLink, ContactBand, StoreBadges } from "@/components/ui";
 import { pageMetadata } from "@/lib/metadata";
 import { homepageSchema, JsonLd } from "@/lib/schema";
 import { industries, services, site } from "@/lib/site";
@@ -134,20 +134,6 @@ export default function HomePage() {
                 Explore Tassenger
               </ButtonLink>
             </div>
-            <div className="home-proof-strip" aria-label="VSC brand signals">
-              <div>
-                <b>Owned product</b>
-                <span>Tassenger: taskable messaging for people, teams, and organizations.</span>
-              </div>
-              <div>
-                <b>Client platform</b>
-                <span>Free Malaysia Today stabilization across web, app, cache, CDN, and APIs.</span>
-              </div>
-              <div>
-                <b>Operating base</b>
-                <span>Built from Harda for teams that need practical software, not theatre.</span>
-              </div>
-            </div>
           </div>
 
           <div className="home-hero-visual" aria-label="Tassenger product plane">
@@ -157,7 +143,7 @@ export default function HomePage() {
                 <p>A VSC-owned product where chat becomes accountable work.</p>
               </div>
               <div className="home-hero-phone">
-                <Image src="/tassenger/dark-today.png" alt="Tassenger Today screen" width={420} height={880} priority />
+                <Image src="/tassenger/tasks-live.png" alt="Tassenger task command center showing Blocked, Do First, and Needs review states" width={420} height={1012} priority />
               </div>
               <div className="home-responsibility-card">
                 <b>From message to accountable work</b>
@@ -169,6 +155,23 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-proof-band" aria-label="VSC signals">
+        <div className="home-wrap home-proof-strip">
+          <div>
+            <b>Owned product</b>
+            <span>Tassenger — taskable messaging for people, teams, and organizations.</span>
+          </div>
+          <div>
+            <b>Client platform</b>
+            <span>Free Malaysia Today, stabilized across web, app, cache, CDN, and APIs.</span>
+          </div>
+          <div>
+            <b>Operating base</b>
+            <span>Built from Harda for teams that need practical software, not theatre.</span>
           </div>
         </div>
       </section>
@@ -206,39 +209,18 @@ export default function HomePage() {
                 Web admin setup
               </ButtonLink>
             </div>
-            <div className="home-store-row">
-              <Link
-                href={site.playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-analytics-event="tassenger_google_play_click"
-                data-analytics-label="Homepage Google Play"
-                data-analytics-section="home_tassenger"
-              >
-                Google Play
-              </Link>
-              <Link
-                href={site.appStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-analytics-event="tassenger_app_store_click"
-                data-analytics-label="Homepage App Store"
-                data-analytics-section="home_tassenger"
-              >
-                App Store
-              </Link>
-            </div>
+            <StoreBadges location="home_tassenger" className="home-store-badges" />
           </div>
 
           <div className="home-product-stage">
             <div className="home-stage-phone home-stage-chat">
-              <Image src="/tassenger/chats.png" alt="Tassenger chats" width={360} height={800} />
+              <Image src="/tassenger/chats-live.png" alt="Tassenger chats with task counts per conversation" width={360} height={779} />
             </div>
             <div className="home-stage-phone home-stage-main">
-              <Image src="/tassenger/dark-today.png" alt="Tassenger Today screen" width={360} height={800} />
+              <Image src="/tassenger/tasks-live.png" alt="Tassenger task command center" width={360} height={779} />
             </div>
             <div className="home-stage-phone home-stage-task">
-              <Image src="/tassenger/proof-sheet.png" alt="Tassenger proof sheet" width={360} height={800} />
+              <Image src="/tassenger/task-detail-live.png" alt="Tassenger task detail with owner, proof, and timeline" width={360} height={779} />
             </div>
             <div className="home-stage-note">
               <b>From conversation to responsibility.</b>
@@ -348,8 +330,8 @@ export default function HomePage() {
         <div className="home-wrap">
           <h2>One software partner for the work around a growing organization.</h2>
           <p className="home-section-copy">
-            VSC should show breadth without sounding careless. The homepage presents capabilities as an operating map:
-            what we can build, stabilize, protect, improve, and automate around real business workflows.
+            One team to build, stabilize, protect, improve, and automate the software your business runs on —
+            so you are not stitching together five vendors around one workflow.
           </p>
           <div className="home-cap-grid">
             <div className="home-core-node">

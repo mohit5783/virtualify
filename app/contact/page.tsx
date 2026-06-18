@@ -36,7 +36,7 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="home-wrap contact-hero-grid">
           <div>
-            <h1>Tell VSC what you want to build, fix, stabilize, or launch.</h1>
+            <h1>Tell VSC what you want to <span>build, fix, stabilize, or launch</span>.</h1>
             <p>
               Message on WhatsApp first. Share the product, platform, link, issue, idea, or organization setup need,
               and VSC will respond with the practical next step.

@@ -1,6 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Sora } from "next/font/google";
 import "@/app/globals.css";
 import { Analytics } from "@/components/analytics";
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap"
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap"
+});
 import { PageShell } from "@/components/ui";
 import { pageMetadata } from "@/lib/metadata";
 import { JsonLd, localBusinessSchema, organizationSchema, websiteSchema } from "@/lib/schema";
@@ -40,7 +55,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={`${sora.variable} ${inter.variable}`}>
       <body>
         <JsonLd data={[organizationSchema(), localBusinessSchema(), websiteSchema()]} />
         <Analytics />

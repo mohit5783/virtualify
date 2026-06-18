@@ -36,7 +36,7 @@ export default function ServicesPage() {
       <section className="service-hero">
         <div className="home-wrap service-hero-grid">
           <div>
-            <h1>One software partner for build, stability, security, growth, and automation.</h1>
+            <h1><span>One software partner</span> for build, stability, security, growth, and automation.</h1>
             <p>
               VSC plans, builds, modernizes, stabilizes, secures, improves, and automates digital systems for
               organizations that need practical technology work delivered with ownership.

@@ -170,12 +170,12 @@ export function tassengerProductSchema() {
       "Tassenger is taskable chat for personal groups and official workspaces. People chat naturally, then important messages can become visible Tasks with owner, context, due signal, proof, review, recurrence, reports, and accountable history.",
     image: absoluteUrl("/tassenger/icon.png"),
     screenshot: [
-      absoluteUrl("/tassenger/store/iphone-chats.jpg"),
-      absoluteUrl("/tassenger/store/iphone-tasks.jpg"),
-      absoluteUrl("/tassenger/store/iphone-task-detail.jpg"),
-      absoluteUrl("/tassenger/store/ipad-studio-crew.jpg"),
-      absoluteUrl("/tassenger/store/ipad-tasks.jpg"),
-      absoluteUrl("/tassenger/store/ipad-task-detail.jpg")
+      absoluteUrl("/tassenger/store/iphone-chats.png"),
+      absoluteUrl("/tassenger/store/iphone-tasks.png"),
+      absoluteUrl("/tassenger/store/iphone-task-detail.png"),
+      absoluteUrl("/tassenger/store/ipad-studio-crew.png"),
+      absoluteUrl("/tassenger/store/ipad-tasks.png"),
+      absoluteUrl("/tassenger/store/ipad-task-detail.png")
     ],
     brand: {
       "@id": absoluteUrl("/#brand")

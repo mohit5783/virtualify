@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
-import { ButtonLink } from "@/components/ui";
+import { ButtonLink, StoreBadges } from "@/components/ui";
 import { pageMetadata } from "@/lib/metadata";
 import { JsonLd, tassengerPageSchema } from "@/lib/schema";
 import { site, tassengerFaqs } from "@/lib/site";
@@ -32,9 +32,6 @@ export const metadata = pageMetadata({
 
 const setupHelpUrl =
   "https://api.whatsapp.com/send?phone=919826065894&text=Hi%20VSC%2C%20I%20want%20help%20setting%20up%20Tassenger%20for%20my%20organization.";
-
-const playStoreUrl = site.playStoreUrl;
-const appStoreUrl = site.appStoreUrl;
 
 const productStats = [
   {
@@ -133,23 +130,23 @@ const legalLinks = [
 
 const phoneScreens = [
   {
-    src: "/tassenger/store/iphone-chats.jpg",
+    src: "/tassenger/store/iphone-chats.png",
     alt: "Tassenger iPhone chats with tasks above messages",
     title: "Chats with Tasks above messages.",
     text: "Conversations stay familiar while work created from them stays visible.",
-    width: 1284,
-    height: 2778
+    width: 1065,
+    height: 2475
   },
   {
-    src: "/tassenger/store/iphone-tasks.jpg",
+    src: "/tassenger/store/iphone-tasks.png",
     alt: "Tassenger iPhone task command center",
     title: "Personal tasks. Official accountability.",
     text: "Blocked, Do First, Review, and In progress states make attention clear.",
-    width: 1284,
-    height: 2778
+    width: 981,
+    height: 2376
   },
   {
-    src: "/tassenger/store/iphone-task-detail.jpg",
+    src: "/tassenger/store/iphone-task-detail.png",
     alt: "Tassenger iPhone task detail with accountability context",
     title: "Turn chats into tasks.",
     text: "Task detail keeps owner, status, context, proof, and review in one place.",
@@ -160,119 +157,30 @@ const phoneScreens = [
 
 const tabletScreens = [
   {
-    src: "/tassenger/store/ipad-studio-crew.jpg",
+    src: "/tassenger/store/ipad-studio-crew.png",
     alt: "Tassenger iPad workspace conversation",
     title: "Workspace conversations.",
     text: "Tablet layouts give teams more room for chat, work context, and shared responsibility.",
     width: 2732,
-    height: 2048
+    height: 1915
   },
   {
-    src: "/tassenger/store/ipad-tasks.jpg",
+    src: "/tassenger/store/ipad-tasks.png",
     alt: "Tassenger iPad tasks overview",
     title: "Task command center.",
     text: "A wider task surface helps official work stay readable across queues and states.",
     width: 2732,
-    height: 2048
+    height: 1915
   },
   {
-    src: "/tassenger/store/ipad-task-detail.jpg",
+    src: "/tassenger/store/ipad-task-detail.png",
     alt: "Tassenger iPad task detail",
     title: "Detail that keeps work accountable.",
     text: "The task view keeps decisions, messages, and next steps from getting buried.",
     width: 2732,
-    height: 2048
+    height: 1915
   }
 ] as const;
-
-function GooglePlayMark() {
-  return (
-    <svg viewBox="0 0 32 36" aria-hidden="true">
-      <path d="M3 2.4 19.2 18 3 33.6Z" fill="#34a853" />
-      <path d="m19.2 18 5.3-5.1 6.4 3.7c1.5.9 1.5 2.9 0 3.8l-6.4 3.7Z" fill="#fbbc04" />
-      <path d="M3 2.4 24.5 12.9 19.2 18Z" fill="#4285f4" />
-      <path d="m3 33.6 16.2-15.6 5.3 5.1Z" fill="#ea4335" />
-    </svg>
-  );
-}
-
-function IosMark() {
-  return (
-    <svg viewBox="0 0 28 34" aria-hidden="true">
-      <path
-        d="M23.1 18.2c0-4.1 3.3-6 3.5-6.1-1.9-2.8-4.8-3.2-5.8-3.2-2.5-.3-4.9 1.5-6.1 1.5-1.3 0-3.2-1.5-5.2-1.4-2.7 0-5.1 1.6-6.5 4-2.8 4.8-.7 11.9 2 15.8 1.3 1.9 2.9 4.1 5 4 2-.1 2.8-1.3 5.2-1.3s3.1 1.3 5.2 1.2c2.2 0 3.5-2 4.9-4 1.5-2.2 2.1-4.3 2.1-4.4-.1 0-4.3-1.6-4.3-6.1ZM19.2 6.3c1.1-1.4 1.9-3.2 1.7-5.1-1.7.1-3.7 1.1-4.9 2.5-1.1 1.2-2 3.1-1.8 4.9 1.9.1 3.8-.9 5-2.3Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-function StoreBadgeLink({
-  href,
-  eyebrow,
-  label,
-  platform,
-  note,
-  location,
-  analyticsEvent
-}: {
-  href: string;
-  eyebrow: string;
-  label: string;
-  platform: "google-play" | "app-store";
-  note?: string;
-  location: string;
-  analyticsEvent: string;
-}) {
-  const platformLabel = platform === "google-play" ? "Google Play" : "App Store";
-
-  return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="tassenger-store-badge"
-      data-analytics-event={analyticsEvent}
-      data-analytics-label={platformLabel}
-      data-analytics-section={location}
-      aria-label={`${eyebrow} ${label}`}
-    >
-      <span className="tassenger-store-mark">
-        {platform === "google-play" ? <GooglePlayMark /> : <IosMark />}
-      </span>
-      <span>
-        <small>{eyebrow}</small>
-        <b>{label}</b>
-        {note ? <em>{note}</em> : null}
-      </span>
-    </Link>
-  );
-}
-
-function StoreBadges({ location }: { location: string }) {
-  return (
-    <div className="tassenger-store-actions" aria-label="Tassenger app download links">
-      <StoreBadgeLink
-        href={playStoreUrl}
-        eyebrow="Get it on"
-        label="Google Play"
-        platform="google-play"
-        note="Android app"
-        location={location}
-        analyticsEvent="tassenger_google_play_click"
-      />
-      <StoreBadgeLink
-        href={appStoreUrl}
-        eyebrow="Download on the"
-        label="App Store"
-        platform="app-store"
-        note="iPhone and iPad"
-        location={location}
-        analyticsEvent="tassenger_app_store_click"
-      />
-    </div>
-  );
-}
 
 export default function TassengerPage() {
   return (
@@ -288,10 +196,12 @@ export default function TassengerPage() {
                 <small>by VSC VirtualifyMe</small>
               </span>
             </div>
-            <h1>Taskable chat for personal groups and official workspaces.</h1>
+            <h1>
+              <span>Taskable chat</span> for personal groups and official workspaces.
+            </h1>
             <p>
-              Turn chats into tasks. Personal tasks. Official accountability. Tassenger keeps messaging natural, then
-              gives important work a visible place with owner, status, proof, review, and history.
+              Turn any message into accountable work. Tassenger keeps chat natural, then gives the important
+              parts an owner, status, proof, and a review trail — so nothing important gets lost in the thread.
             </p>
             <StoreBadges location="tassenger_hero" />
             <div className="tassenger-actions">
@@ -304,38 +214,6 @@ export default function TassengerPage() {
               >
                 Open WebApp login <ArrowIcon />
               </ButtonLink>
-              <ButtonLink
-                href={setupHelpUrl}
-                external
-                variant="secondary"
-                analyticsEvent="tassenger_setup_help_click"
-                analyticsLabel="Hero setup help"
-                analyticsSection="tassenger_hero"
-              >
-                Setup help <ArrowIcon />
-              </ButtonLink>
-            </div>
-            <div className="tassenger-store-status" aria-label="Tassenger availability">
-              <Link
-                href={playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-analytics-event="tassenger_google_play_click"
-                data-analytics-label="Hero Google Play status"
-                data-analytics-section="tassenger_hero"
-              >
-                Android live on Google Play
-              </Link>
-              <Link
-                href={appStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-analytics-event="tassenger_app_store_click"
-                data-analytics-label="Hero App Store status"
-                data-analytics-section="tassenger_hero"
-              >
-                iOS live on the App Store
-              </Link>
             </div>
           </div>
 
@@ -343,30 +221,30 @@ export default function TassengerPage() {
             <div className="tassenger-stage-card">
               <div className="tassenger-tablet-frame">
                 <Image
-                  src="/tassenger/store/ipad-studio-crew.jpg"
+                  src="/tassenger/store/ipad-studio-crew.png"
                   alt="Tassenger iPad workspace conversation"
                   width={2732}
-                  height={2048}
+                  height={1915}
                   priority
                   sizes="(max-width: 760px) 92vw, 48vw"
                 />
               </div>
               <div className="tassenger-phone tassenger-phone-main">
                 <Image
-                  src="/tassenger/store/iphone-chats.jpg"
+                  src="/tassenger/store/iphone-chats.png"
                   alt="Tassenger iPhone chats with tasks above messages"
-                  width={1284}
-                  height={2778}
+                  width={1065}
+                  height={2475}
                   priority
                   sizes="(max-width: 760px) 52vw, 260px"
                 />
               </div>
               <div className="tassenger-phone tassenger-phone-dark">
                 <Image
-                  src="/tassenger/store/iphone-tasks.jpg"
+                  src="/tassenger/store/iphone-tasks.png"
                   alt="Tassenger iPhone task command center with blocked, Do First and review states"
-                  width={1284}
-                  height={2778}
+                  width={981}
+                  height={2376}
                   loading="eager"
                   sizes="(max-width: 760px) 42vw, 220px"
                 />
@@ -408,10 +286,10 @@ export default function TassengerPage() {
           </div>
           <div className="tassenger-story-phone">
             <Image
-              src="/tassenger/chats.png"
+              src="/tassenger/chats-live.png"
               alt="Tassenger chats list with personal and official task signals"
-              width={1080}
-              height={2400}
+              width={1284}
+              height={2778}
               loading="lazy"
               sizes="(max-width: 760px) 78vw, 320px"
             />

@@ -221,6 +221,72 @@ function FooterColumn({
   );
 }
 
+export function AppStoreBadge() {
+  return (
+    <svg className="store-badge-svg" viewBox="0 0 170 52" role="img" aria-label="Download on the App Store" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="169" height="51" rx="11" fill="#000" stroke="rgba(255,255,255,0.28)" />
+      <g transform="translate(18,12) scale(0.82)" fill="#fff">
+        <path d="M23.1 18.2c0-4.1 3.3-6 3.5-6.1-1.9-2.8-4.8-3.2-5.8-3.2-2.5-.3-4.9 1.5-6.1 1.5-1.3 0-3.2-1.5-5.2-1.4-2.7 0-5.1 1.6-6.5 4-2.8 4.8-.7 11.9 2 15.8 1.3 1.9 2.9 4.1 5 4 2-.1 2.8-1.3 5.2-1.3s3.1 1.3 5.2 1.2c2.2 0 3.5-2 4.9-4 1.5-2.2 2.1-4.3 2.1-4.4-.1 0-4.3-1.6-4.3-6.1ZM19.2 6.3c1.1-1.4 1.9-3.2 1.7-5.1-1.7.1-3.7 1.1-4.9 2.5-1.1 1.2-2 3.1-1.8 4.9 1.9.1 3.8-.9 5-2.3Z" />
+      </g>
+      <text x="58" y="21" fill="#fff" fontSize="9" fontWeight="400" letterSpacing="0.5" fontFamily="var(--font-sans)">Download on the</text>
+      <text x="57" y="40" fill="#fff" fontSize="21" fontWeight="600" letterSpacing="-0.3" fontFamily="var(--font-sans)">App Store</text>
+    </svg>
+  );
+}
+
+export function GooglePlayBadge() {
+  return (
+    <svg className="store-badge-svg" viewBox="0 0 182 52" role="img" aria-label="Get it on Google Play" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="181" height="51" rx="11" fill="#000" stroke="rgba(255,255,255,0.28)" />
+      <g transform="translate(18,13.5) scale(0.7)">
+        <path d="M3 2.4 19.2 18 3 33.6Z" fill="#00d3ff" />
+        <path d="m19.2 18 5.3-5.1 6.4 3.7c1.5.9 1.5 2.9 0 3.8l-6.4 3.7Z" fill="#ffce00" />
+        <path d="M3 2.4 24.5 12.9 19.2 18Z" fill="#00f076" />
+        <path d="m3 33.6 16.2-15.6 5.3 5.1Z" fill="#ff3a44" />
+      </g>
+      <text x="58" y="21" fill="#fff" fontSize="9" fontWeight="400" letterSpacing="1.4" fontFamily="var(--font-sans)">GET IT ON</text>
+      <text x="57" y="40" fill="#fff" fontSize="21" fontWeight="600" letterSpacing="-0.3" fontFamily="var(--font-sans)">Google Play</text>
+    </svg>
+  );
+}
+
+export function StoreBadges({
+  location,
+  className = ""
+}: {
+  location: string;
+  className?: string;
+}) {
+  return (
+    <div className={`store-badges ${className}`} aria-label="Download Tassenger">
+      <Link
+        href={site.appStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="store-badge"
+        data-analytics-event="tassenger_app_store_click"
+        data-analytics-label="App Store"
+        data-analytics-section={location}
+        aria-label="Download Tassenger on the App Store"
+      >
+        <AppStoreBadge />
+      </Link>
+      <Link
+        href={site.playStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="store-badge"
+        data-analytics-event="tassenger_google_play_click"
+        data-analytics-label="Google Play"
+        data-analytics-section={location}
+        aria-label="Get Tassenger on Google Play"
+      >
+        <GooglePlayBadge />
+      </Link>
+    </div>
+  );
+}
+
 export function PageShell({ children }: { children: ReactNode }) {
   return (
     <>

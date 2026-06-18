@@ -26,9 +26,9 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="home-wrap about-hero-grid">
           <div>
-            <h1>A software company from a small town, building for serious markets.</h1>
+            <h1>A software company from a small town, building for <span>serious markets</span>.</h1>
             <p>
-              VirtualifyMe is the public brand of {site.legalName}. VSC is rooted in Harda, Madhya Pradesh, but the
+              VirtualifyMe is the public brand of {site.legalName} VSC is rooted in Harda, Madhya Pradesh, but the
               ambition is wider: build products, stabilize platforms, modernize digital systems, and deliver practical
               software for organizations that need work to keep moving.
             </p>

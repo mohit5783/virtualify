@@ -29,7 +29,7 @@ export default function WorkPage() {
       <section className="work-hero">
         <div className="home-wrap work-hero-grid">
           <div>
-            <h1>Work that shows how VSC builds under real pressure.</h1>
+            <h1>Work that shows how VSC builds under <span>real pressure</span>.</h1>
             <p>
               VSC’s work story starts with two strong signals: Tassenger, a product built by VSC, and Free Malaysia
               Today, a high-traffic news platform VSC supported across stability, delivery, and mobile behavior.

@@ -32,7 +32,7 @@ export default function ProductsPage() {
       <section className="products-hero">
         <div className="home-wrap products-hero-grid">
           <div>
-            <h1>Products and product thinking from VSC.</h1>
+            <h1><span>Products</span> and product thinking from VSC.</h1>
             <p>
               Tassenger is VSC’s flagship product. Around it, VSC continues shaping product directions for workflows,
               travel, parking, dashboards, training, and operational tools.
@@ -67,9 +67,9 @@ export default function ProductsPage() {
             <h2>{tassenger?.title}</h2>
             <p>{tassenger?.summary}</p>
             <div className="products-feature-screens">
-              <Image src="/tassenger/chats.png" alt="Tassenger chats" width={180} height={400} />
-              <Image src="/tassenger/dark-today.png" alt="Tassenger Today screen" width={180} height={400} />
-              <Image src="/tassenger/proof-sheet.png" alt="Tassenger proof sheet" width={180} height={400} />
+              <Image src="/tassenger/chats-live.png" alt="Tassenger chats" width={180} height={390} />
+              <Image src="/tassenger/tasks-live.png" alt="Tassenger task command center" width={180} height={390} />
+              <Image src="/tassenger/task-detail-live.png" alt="Tassenger task detail" width={180} height={390} />
             </div>
           </Link>
         </div>

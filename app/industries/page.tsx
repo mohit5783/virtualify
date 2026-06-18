@@ -30,7 +30,7 @@ export default function IndustriesPage() {
       <section className="industry-hero">
         <div className="home-wrap industry-hero-grid">
           <div>
-            <h1>Industry software for teams that need systems to behave in the real world.</h1>
+            <h1>Industry software for teams that need systems to <span>behave in the real world</span>.</h1>
             <p>
               VSC approaches every industry through operating pressure: traffic, roles, forms, customers, staff,
               visibility, approvals, devices, decisions, and the daily systems that have to keep working.
