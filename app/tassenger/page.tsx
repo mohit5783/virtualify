@@ -33,8 +33,8 @@ export const metadata = pageMetadata({
 const setupHelpUrl =
   "https://api.whatsapp.com/send?phone=919826065894&text=Hi%20VSC%2C%20I%20want%20help%20setting%20up%20Tassenger%20for%20my%20organization.";
 
-const androidEarlyAccessUrl = site.tassengerAndroidEarlyAccessUrl;
-const androidTesterGroupUrl = site.tassengerTesterGroupUrl;
+const playStoreUrl = site.playStoreUrl;
+const appStoreUrl = site.appStoreUrl;
 
 const productStats = [
   {
@@ -197,35 +197,48 @@ function GooglePlayMark() {
 }
 
 function IosMark() {
-  return <span className="tassenger-ios-mark">iOS</span>;
+  return (
+    <svg viewBox="0 0 28 34" aria-hidden="true">
+      <path
+        d="M23.1 18.2c0-4.1 3.3-6 3.5-6.1-1.9-2.8-4.8-3.2-5.8-3.2-2.5-.3-4.9 1.5-6.1 1.5-1.3 0-3.2-1.5-5.2-1.4-2.7 0-5.1 1.6-6.5 4-2.8 4.8-.7 11.9 2 15.8 1.3 1.9 2.9 4.1 5 4 2-.1 2.8-1.3 5.2-1.3s3.1 1.3 5.2 1.2c2.2 0 3.5-2 4.9-4 1.5-2.2 2.1-4.3 2.1-4.4-.1 0-4.3-1.6-4.3-6.1ZM19.2 6.3c1.1-1.4 1.9-3.2 1.7-5.1-1.7.1-3.7 1.1-4.9 2.5-1.1 1.2-2 3.1-1.8 4.9 1.9.1 3.8-.9 5-2.3Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
 }
 
 function StoreBadgeLink({
   href,
   eyebrow,
   label,
+  platform,
   note,
-  location
+  location,
+  analyticsEvent
 }: {
   href: string;
   eyebrow: string;
   label: string;
+  platform: "google-play" | "app-store";
   note?: string;
   location: string;
+  analyticsEvent: string;
 }) {
+  const platformLabel = platform === "google-play" ? "Google Play" : "App Store";
+
   return (
     <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="tassenger-store-badge"
-      data-analytics-event="tassenger_android_early_access_click"
-      data-analytics-label={label}
+      data-analytics-event={analyticsEvent}
+      data-analytics-label={platformLabel}
       data-analytics-section={location}
-      aria-label={`${eyebrow} on ${label}`}
+      aria-label={`${eyebrow} ${label}`}
     >
       <span className="tassenger-store-mark">
-        <GooglePlayMark />
+        {platform === "google-play" ? <GooglePlayMark /> : <IosMark />}
       </span>
       <span>
         <small>{eyebrow}</small>
@@ -236,33 +249,28 @@ function StoreBadgeLink({
   );
 }
 
-function StoreBadgeSoon() {
+function StoreBadges({ location }: { location: string }) {
   return (
-    <span className="tassenger-store-badge tassenger-store-badge-soon" role="status" aria-label="iOS available soon">
-      <span className="tassenger-store-mark">
-        <IosMark />
-      </span>
-      <span>
-        <small>iOS available soon</small>
-        <b>App Store</b>
-        <em>Review in progress</em>
-      </span>
-    </span>
-  );
-}
-
-function TesterGroupLink({ location }: { location: string }) {
-  return (
-    <ButtonLink
-      href={androidTesterGroupUrl}
-      external
-      variant="secondary"
-      analyticsEvent="tassenger_tester_group_click"
-      analyticsLabel={`${location} tester group`}
-      analyticsSection={location}
-    >
-      Join tester group <ArrowIcon />
-    </ButtonLink>
+    <div className="tassenger-store-actions" aria-label="Tassenger app download links">
+      <StoreBadgeLink
+        href={playStoreUrl}
+        eyebrow="Get it on"
+        label="Google Play"
+        platform="google-play"
+        note="Android app"
+        location={location}
+        analyticsEvent="tassenger_google_play_click"
+      />
+      <StoreBadgeLink
+        href={appStoreUrl}
+        eyebrow="Download on the"
+        label="App Store"
+        platform="app-store"
+        note="iPhone and iPad"
+        location={location}
+        analyticsEvent="tassenger_app_store_click"
+      />
+    </div>
   );
 }
 
@@ -285,18 +293,8 @@ export default function TassengerPage() {
               Turn chats into tasks. Personal tasks. Official accountability. Tassenger keeps messaging natural, then
               gives important work a visible place with owner, status, proof, review, and history.
             </p>
-            <div className="tassenger-store-actions" aria-label="Tassenger app download links">
-              <StoreBadgeLink
-                href={androidEarlyAccessUrl}
-                eyebrow="Join Android Early Access"
-                label="Google Play"
-                note="Early access"
-                location="tassenger_hero"
-              />
-              <StoreBadgeSoon />
-            </div>
+            <StoreBadges location="tassenger_hero" />
             <div className="tassenger-actions">
-              <TesterGroupLink location="tassenger_hero" />
               <ButtonLink
                 href="/tassenger/admin"
                 analyticsEvent="tassenger_admin_click"
@@ -319,26 +317,25 @@ export default function TassengerPage() {
             </div>
             <div className="tassenger-store-status" aria-label="Tassenger availability">
               <Link
-                href={androidEarlyAccessUrl}
+                href={playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-analytics-event="tassenger_android_early_access_click"
-                data-analytics-label="Hero early access status"
+                data-analytics-event="tassenger_google_play_click"
+                data-analytics-label="Hero Google Play status"
                 data-analytics-section="tassenger_hero"
               >
-                Android early access open
+                Android live on Google Play
               </Link>
               <Link
-                href={androidTesterGroupUrl}
+                href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-analytics-event="tassenger_tester_group_click"
-                data-analytics-label="Hero tester group status"
+                data-analytics-event="tassenger_app_store_click"
+                data-analytics-label="Hero App Store status"
                 data-analytics-section="tassenger_hero"
               >
-                Tester group open
+                iOS live on the App Store
               </Link>
-              <span>iOS App Store review in progress</span>
             </div>
           </div>
 
@@ -660,22 +657,12 @@ export default function TassengerPage() {
             <Image src="/tassenger/icon.png" alt="Tassenger app icon" width={68} height={68} loading="lazy" />
             <h2>Start with one real conversation. Turn one message into work.</h2>
             <p>
-              Join Android early access, enter the tester group, open the WebApp for organization setup, or ask VSC to
-              walk your team through the first workspace.
+              Download Tassenger from Google Play or the App Store, open the WebApp for organization setup, or ask VSC
+              to walk your team through the first workspace.
             </p>
           </div>
           <div className="tassenger-final-actions">
-            <div className="tassenger-store-actions" aria-label="Tassenger final app download links">
-              <StoreBadgeLink
-                href={androidEarlyAccessUrl}
-                eyebrow="Join Android Early Access"
-                label="Google Play"
-                note="Early access"
-                location="tassenger_final"
-              />
-              <StoreBadgeSoon />
-            </div>
-            <TesterGroupLink location="tassenger_final" />
+            <StoreBadges location="tassenger_final" />
             <ButtonLink
               href="/tassenger/admin"
               analyticsEvent="tassenger_admin_click"

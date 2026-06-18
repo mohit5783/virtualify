@@ -207,8 +207,26 @@ export default function HomePage() {
               </ButtonLink>
             </div>
             <div className="home-store-row">
-              <span>Play Store coming soon</span>
-              <span>App Store coming soon</span>
+              <Link
+                href={site.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event="tassenger_google_play_click"
+                data-analytics-label="Homepage Google Play"
+                data-analytics-section="home_tassenger"
+              >
+                Google Play
+              </Link>
+              <Link
+                href={site.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event="tassenger_app_store_click"
+                data-analytics-label="Homepage App Store"
+                data-analytics-section="home_tassenger"
+              >
+                App Store
+              </Link>
             </div>
           </div>
 
